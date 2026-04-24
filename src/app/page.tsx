@@ -1,33 +1,31 @@
-import { LazyDither } from "@/components/animations/lazy-dither";
-import { CompanyShowcase } from "@/components/section/company-showcase";
-import { ConnectSection } from "@/components/section/connection-section";
-import { CTASection } from "@/components/section/cta-section";
-import { DemoSection } from "@/components/section/demo-section";
-import { FAQSection } from "@/components/section/faq-section";
-import { FeatureSection } from "@/components/section/feature-section";
-import { Footer } from "@/components/section/footer";
-import { HeroSection } from "@/components/section/hero-section";
-import { PricingSection } from "@/components/section/pricing-section";
-import { TestimonialSection } from "@/components/section/testimonial-section";
-import { WorkflowConnectSection } from "@/components/section/workflow-connect-section";
-import { WorkflowSection } from "@/components/section/workflow-section";
+import { Nav } from "@/components/osimah/nav";
+import { Hero } from "@/components/osimah/hero";
+import { Partners } from "@/components/osimah/partners";
+import { Services } from "@/components/osimah/services";
+import { Leadership } from "@/components/osimah/leadership";
+import { Projects } from "@/components/osimah/projects";
+import { Strategy } from "@/components/osimah/strategy";
+import { Brands } from "@/components/osimah/brands";
+import { Faq } from "@/components/osimah/faq";
+import { Cta } from "@/components/osimah/cta";
+import { Footer } from "@/components/osimah/footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col divide-y divide-border pt-16">
-      <HeroSection />
-      <DemoSection />
-      <CompanyShowcase />
-      <WorkflowSection />
-      <WorkflowConnectSection />
-      <FeatureSection />
-      <ConnectSection />
-      <TestimonialSection />
-      <PricingSection />
-      <FAQSection />
-      <CTASection />
+    <>
+      <Nav />
+      <main>
+        <Hero />
+        <Partners />
+        <Services />
+        <Leadership />
+        <Projects />
+        <Strategy />
+        <Brands />
+        <Faq />
+        <Cta />
+      </main>
       <Footer />
-      <LazyDither />
-    </main>
+    </>
   );
 }

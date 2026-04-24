@@ -1,31 +1,35 @@
-import { Navbar } from "@/components/section/navbar";
-import { ThemeProvider } from "@/components/theme-provider";
-import { siteConfig } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
+  axes: ["SOFT", "WONK", "opsz"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  variable: "--font-jetbrains-mono",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0789C0",
+  themeColor: "#0FA39C",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
+  title: "Osimah Digital — Enabling the Kingdom's digital future",
+  description:
+    "A Saudi technology house representing global brands in the Middle East — headquartered in Riyadh since 2017.",
+  icons: { icon: "/logo.PNG" },
 };
 
 export default function RootLayout({
@@ -34,20 +38,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans px-4 lg:px-0 overflow-x-hidden`}
+        className={`${fraunces.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       >
-        <ThemeProvider
-          attribute="class"
-          forcedTheme="light"
-          disableTransitionOnChange
-        >
-          <div className="max-w-7xl mx-auto border-x border-border">
-            <Navbar />
-            {children}
-          </div>
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );
