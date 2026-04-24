@@ -531,7 +531,22 @@ section { padding: 120px 0; }
 .mt-6 { margin-top: 24px; }
 .mt-8 { margin-top: 32px; }
 
+/* ── Testimonials ── */
+.testimonials { padding: 96px 0; background: var(--paper); }
+.testimonials .section-head { margin-bottom: 64px; }
+.ct-container { width: 100%; }
+.ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.ct-images { position: relative; width: 100%; height: 22rem; perspective: 1000px; }
+.ct-img { position: absolute; width: 100%; height: 100%; object-fit: cover; border-radius: 1.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.15); }
+.ct-content { display: flex; flex-direction: column; gap: 2rem; }
+.ct-name { font-size: 1.5rem; margin-bottom: 0.25rem; }
+.ct-designation { font-size: 0.9rem; color: var(--ink-2); margin-bottom: 1.5rem; }
+.ct-quote { line-height: 1.8; font-size: 1.1rem; color: var(--ink-2); }
+.ct-arrows { display: flex; gap: 1rem; margin-top: 0.5rem; }
+.ct-arrow { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: none; transition: background-color 0.3s; }
+
 @media (max-width: 960px) {
+  .ct-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .shell { padding: 0 24px; }
   .nav__links { display: none; }
   .hero__grid, .services__panel, .section-head, .faq__grid, .cta__grid, .footer__top, .partners__row { grid-template-columns: 1fr; gap: 32px; }

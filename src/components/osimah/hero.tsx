@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-function HeroVisual() {
+function ShaderCircle() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
@@ -15,35 +15,32 @@ function HeroVisual() {
       precision highp float;
       uniform float iTime;
       uniform vec2 iResolution;
-      uniform vec3 uBg;
-      uniform vec3 uAccent;
-      mat2 rotate2d(float a){ float c=cos(a),s=sin(a); return mat2(c,-s,s,c); }
-      float variation(vec2 v1, vec2 v2, float strength, float speed){
-        return sin(dot(normalize(v1), normalize(v2)) * strength + iTime * speed) / 100.0;
+      mat2 rotate2d(float angle){ float c=cos(angle),s=sin(angle); return mat2(c,-s,s,c); }
+      float variation(vec2 v1,vec2 v2,float strength,float speed){
+        return sin(dot(normalize(v1),normalize(v2))*strength+iTime*speed)/100.0;
       }
-      vec3 paintCircle(vec2 uv, vec2 center, float rad, float width){
-        vec2 diff = center - uv;
-        float len = length(diff);
-        len += variation(diff, vec2(0.,1.), 5., 2.);
-        len -= variation(diff, vec2(1.,0.), 5., 2.);
-        float circle = smoothstep(rad - width, rad, len) - smoothstep(rad, rad + width, len);
+      vec3 paintCircle(vec2 uv,vec2 center,float rad,float width){
+        vec2 diff=center-uv;
+        float len=length(diff);
+        len+=variation(diff,vec2(0.,1.),5.,2.);
+        len-=variation(diff,vec2(1.,0.),5.,2.);
+        float circle=smoothstep(rad-width,rad,len)-smoothstep(rad,rad+width,len);
         return vec3(circle);
       }
       void main(){
-        vec2 uv = gl_FragCoord.xy / iResolution.xy;
-        float aspect = iResolution.x / iResolution.y;
-        uv.x = (uv.x - 0.5) * aspect + 0.5;
-        float mask = 0.0;
-        float radius = 0.35;
-        vec2 center = vec2(0.5);
-        mask += paintCircle(uv, center, radius, 0.035).r;
-        mask += paintCircle(uv, center, radius - 0.018, 0.010).r;
-        mask += paintCircle(uv, center, radius + 0.018, 0.005).r;
-        vec2 v = rotate2d(iTime) * (uv - 0.5);
-        vec3 fg = mix(uAccent, vec3(v.x + 0.5, v.y + 0.6, 0.7 - v.y * v.x), 0.55);
-        vec3 color = mix(uBg, fg, mask);
-        color = mix(color, vec3(1.0), paintCircle(uv, center, radius, 0.003).r);
-        gl_FragColor = vec4(color, 1.0);
+        vec2 uv=gl_FragCoord.xy/iResolution.xy;
+        uv.x*=1.5; uv.x-=0.25;
+        float mask=0.0;
+        float radius=.35;
+        vec2 center=vec2(.5);
+        mask+=paintCircle(uv,center,radius,.035).r;
+        mask+=paintCircle(uv,center,radius-.018,.01).r;
+        mask+=paintCircle(uv,center,radius+.018,.005).r;
+        vec2 v=rotate2d(iTime)*uv;
+        vec3 fg=vec3(v.x,v.y,.7-v.y*v.x);
+        vec3 color=mix(vec3(1.),fg,mask);
+        color=mix(color,vec3(1.),paintCircle(uv,center,radius,.003).r);
+        gl_FragColor=vec4(color,1.);
       }`;
 
     const compile = (type: number, src: string) => {
@@ -60,21 +57,13 @@ function HeroVisual() {
 
     const buf = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 1, -1, -1, 1, -1, 1, 1, -1, 1, 1]),
-      gl.STATIC_DRAW
-    );
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]), gl.STATIC_DRAW);
     const aPos = gl.getAttribLocation(program, "aPosition");
     gl.enableVertexAttribArray(aPos);
     gl.vertexAttribPointer(aPos, 2, gl.FLOAT, false, 0, 0);
 
     const uT = gl.getUniformLocation(program, "iTime");
     const uR = gl.getUniformLocation(program, "iResolution");
-    const uBg = gl.getUniformLocation(program, "uBg");
-    const uAc = gl.getUniformLocation(program, "uAccent");
-    gl.uniform3fv(uBg, new Float32Array([1.0, 1.0, 1.0]));
-    gl.uniform3fv(uAc, new Float32Array([15 / 255, 163 / 255, 156 / 255]));
 
     let raf = 0;
     const resize = () => {
@@ -107,15 +96,8 @@ function HeroVisual() {
 }
 
 const MARQUEE = [
-  "Branding",
-  "UX Design",
-  "UI Design",
-  "Front-end",
-  "Back-end",
-  "Integrations",
-  "Server Config",
-  "Security",
-  "Deployment",
+  "Branding", "UX Design", "UI Design", "Front-end", "Back-end",
+  "Integrations", "Server Config", "Security", "Deployment",
 ];
 
 export function Hero() {
@@ -145,15 +127,13 @@ export function Hero() {
               </a>
             </div>
           </div>
-          <HeroVisual />
+          <ShaderCircle />
         </div>
 
         <div className="hero__marquee">
           <div className="hero__marquee-track">
             {[...MARQUEE, ...MARQUEE].map((w, i) => (
-              <span key={i} className="hero__marquee-item">
-                {w}
-              </span>
+              <span key={i} className="hero__marquee-item">{w}</span>
             ))}
           </div>
         </div>
