@@ -49,9 +49,9 @@ export const siteConfig = {
                 name: "Services",
                 href: "#",
                 submenu: [
-                    { id: 1, icon: <Icons.magicClick className="size-4 text-muted-foreground" />, name: "Branding & UX Design", href: "#services", description: "Brand identity, UX & UI crafted to elevate your digital presence", image: "/instant-integration.png" },
-                    { id: 2, icon: <Icons.code className="size-4 text-muted-foreground" />, name: "Web Development", href: "#services", description: "Front-end, back-end and integrations built for scale", image: "/intelligent-reviews.png" },
-                    { id: 3, icon: <Icons.shock className="size-4 text-muted-foreground" />, name: "Infrastructure & AI", href: "#services", description: "Secure server configurations, deployment and AI innovation", image: "/multi-line-edits.png" },
+                    { id: 1, icon: <Icons.magicClick className="size-4 text-muted-foreground" />, name: "Branding & UX Design", href: "#services", description: "Brand identity, UX & UI crafted to elevate your digital presence", image: "/o1.PNG" },
+                    { id: 2, icon: <Icons.code className="size-4 text-muted-foreground" />, name: "Web Development", href: "#services", description: "Front-end, back-end and integrations built for scale", image: "/o2.PNG" },
+                    { id: 3, icon: <Icons.shock className="size-4 text-muted-foreground" />, name: "Infrastructure & AI", href: "#services", description: "Secure server configurations, deployment and AI innovation", image: "/o3.PNG" },
                 ]
             },
             { id: 3, name: "About", href: "#about" },
@@ -82,7 +82,7 @@ export const siteConfig = {
                 content:
                     "Distinctive brand identities, UX research and UI design that connect with your audience and elevate your market presence.",
                 image:
-                    "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop",
+                    "/o4.PNG",
             },
             {
                 id: 2,
@@ -90,7 +90,7 @@ export const siteConfig = {
                 content:
                     "Robust front-end and back-end solutions with seamless third-party integrations, built for performance and scale.",
                 image:
-                    "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=2000&auto=format&fit=crop",
+                    "/o5.PNG",
             },
             {
                 id: 3,
@@ -98,7 +98,7 @@ export const siteConfig = {
                 content:
                     "Secure server configurations, deployment pipelines and ongoing maintenance to keep your digital assets running reliably.",
                 image:
-                    "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop",
+                    "/o6.PNG",
             },
             {
                 id: 4,
@@ -106,7 +106,7 @@ export const siteConfig = {
                 content:
                     "Cutting-edge AI solutions tailored to the KSA market — from intelligent automations to data-driven product experiences.",
                 image:
-                    "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=2000&auto=format&fit=crop",
+                    "/o7.PNG",
             },
         ],
     },
@@ -535,7 +535,7 @@ export const siteConfig = {
     ctaSection: {
         id: "cta",
         title: "Ready to Talk?",
-        backgroundImage: "/agent-cta-background.png",
+        backgroundImage: "/our new scope.jpeg",
         button: {
             text: "Contact Us",
             href: "#contact",
