@@ -260,7 +260,7 @@ export const siteConfig = {
                 id: "1",
                 name: "Khalid Al-Rasheed",
                 role: "CEO at Saudi Retail Group",
-                img: "https://randomuser.me/api/portraits/men/32.jpg",
+                img: "/o8.PNG",
                 description: (
                     <p>
                         Osimah Digital transformed our entire online presence. From brand identity to e-commerce platform, their team delivered a world-class digital experience that our customers love.
@@ -271,7 +271,7 @@ export const siteConfig = {
                 id: "2",
                 name: "Fatima Al-Zahrani",
                 role: "Marketing Director at Vision Holdings",
-                img: "https://randomuser.me/api/portraits/women/44.jpg",
+                img: "/o9.PNG",
                 description: (
                     <p>
                         Working with Osimah felt like having an in-house team that truly understood our Saudi market. Their design sensibility and technical execution were outstanding.{" "}
@@ -283,7 +283,7 @@ export const siteConfig = {
                 id: "3",
                 name: "Mohammed Al-Harbi",
                 role: "Founder at Riyadh TechVentures",
-                img: "https://randomuser.me/api/portraits/men/67.jpg",
+                img: "/o10.PNG",
                 description: (
                     <p>
                         As a startup, we needed speed and quality. Osimah delivered both. Our platform was live in weeks and the UX has been praised by investors and users alike.
@@ -294,7 +294,7 @@ export const siteConfig = {
                 id: "4",
                 name: "Sara Al-Otaibi",
                 role: "Head of Digital at KSA Finance Corp",
-                img: "https://randomuser.me/api/portraits/women/29.jpg",
+                img: "/o11.PNG",
                 description: (
                     <p>
                         The infrastructure team at Osimah gave us the reliability and security we needed for financial services.
@@ -306,7 +306,7 @@ export const siteConfig = {
                 id: "5",
                 name: "Ahmed Al-Ghamdi",
                 role: "COO at Saudi Logistics Co",
-                img: "https://randomuser.me/api/portraits/men/11.jpg",
+                img: "/o12.PNG",
                 description: (
                     <p>
                         Osimah Digital integrated our legacy systems with a modern web platform flawlessly. The back-end integrations were complex, but their team handled everything professionally.
@@ -317,7 +317,7 @@ export const siteConfig = {
                 id: "6",
                 name: "Noura Al-Shehri",
                 role: "Brand Manager at Jeddah Lifestyle",
-                img: "https://randomuser.me/api/portraits/women/61.jpg",
+                img: "/o13.PNG",
                 description: (
                     <p>
                         The branding work Osimah did for us was exceptional.
@@ -331,7 +331,7 @@ export const siteConfig = {
                 id: "7",
                 name: "Tariq Al-Mansouri",
                 role: "CTO at MedTech Arabia",
-                img: "https://randomuser.me/api/portraits/men/38.jpg",
+                img: "/o14.PNG",
                 description: (
                     <p>
                         We trusted Osimah with our patient portal development and they exceeded every expectation.
@@ -345,7 +345,7 @@ export const siteConfig = {
                 id: "8",
                 name: "Lama Al-Dosari",
                 role: "E-commerce Director at Gulf Retail",
-                img: "https://randomuser.me/api/portraits/women/17.jpg",
+                img: "/o15.PNG",
                 description: (
                     <p>
                         Osimah rebuilt our e-commerce platform from scratch and the results speak for themselves.
@@ -360,7 +360,7 @@ export const siteConfig = {
                 id: "9",
                 name: "Faisal Al-Quraishi",
                 role: "VP Technology at Arabian Group",
-                img: "https://randomuser.me/api/portraits/men/52.jpg",
+                img: "/o16.PNG",
                 description: (
                     <p>
                         The Liferay implementation Osimah delivered for our intranet transformed how our 500+ employees collaborate daily.
@@ -374,7 +374,7 @@ export const siteConfig = {
                 id: "10",
                 name: "Rana Al-Bahkali",
                 role: "CEO at Saudi EdTech",
-                img: "https://randomuser.me/api/portraits/women/82.jpg",
+                img: "/o17.PNG",
                 description: (
                     <p>
                         From concept to launch in 8 weeks — Osimah made it happen. Their full-stack capability meant we had one trusted partner for everything.
@@ -388,7 +388,7 @@ export const siteConfig = {
                 id: "11",
                 name: "Waleed Al-Shamrani",
                 role: "Founder at KSA PropTech",
-                img: "https://randomuser.me/api/portraits/men/77.jpg",
+                img: "/o18.PNG",
                 description: (
                     <p>
                         Osimah Digital is the rare agency that combines strong design taste with solid engineering.
@@ -402,7 +402,7 @@ export const siteConfig = {
                 id: "12",
                 name: "Hessa Al-Mutairi",
                 role: "CMO at Riyadh Fashion House",
-                img: "https://randomuser.me/api/portraits/women/33.jpg",
+                img: "/o19.PNG",
                 description: (
                     <p>
                         The UX redesign Osimah delivered completely changed how our customers interact with our brand online.
@@ -414,7 +414,7 @@ export const siteConfig = {
                 id: "13",
                 name: "Saad Al-Enezi",
                 role: "Director at Saudi Innovation Hub",
-                img: "https://randomuser.me/api/portraits/men/43.jpg",
+                img: "/o20.PNG",
                 description: (
                     <p>
                         Osimah&apos;s AI innovation work opened doors we did not think were possible.
