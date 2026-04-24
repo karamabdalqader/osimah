@@ -10,7 +10,25 @@
       "PowerShell(Stop-Process -Name \"node\" -Force -ErrorAction SilentlyContinue)",
       "mcp__Desktop_Commander__read_file",
       "Bash(python -c \" import subprocess result = subprocess.run\\(['pdftotext', 'Crafton ME BAFO for Sela DMC.pdf', '-'], capture_output=True, text=True\\) text = result.stdout lines = text.split\\('\\\\n'\\) for i, line in enumerate\\(lines\\): if i > 1200: print\\(f'{i}: {line}'\\) \")",
-      "Bash(python -c \" import subprocess result = subprocess.run\\(['pdftotext', 'Crafton ME BAFO for Sela DMC.pdf', '-'], capture_output=True, text=True\\) text = result.stdout lines = text.split\\('\\\\n'\\) for i, line in enumerate\\(lines\\): if i > 1350: print\\(f'{i}: {line}'\\) \")"
+      "Bash(python -c \" import subprocess result = subprocess.run\\(['pdftotext', 'Crafton ME BAFO for Sela DMC.pdf', '-'], capture_output=True, text=True\\) text = result.stdout lines = text.split\\('\\\\n'\\) for i, line in enumerate\\(lines\\): if i > 1350: print\\(f'{i}: {line}'\\) \")",
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(mkdir -p \"/tmp/osimah-design\")",
+      "Read(//tmp/**)",
+      "Bash(cp \"C:/Users/i7-9700k/.claude/projects/C--Users-i7-9700k-Downloads-Osimah-C/08c9329c-ebf8-4283-baae-9f6393c95816/tool-results/webfetch-1777055063510-as78oa.bin\" design.tar.gz)",
+      "Bash(tar tzf *)",
+      "Bash(gunzip -t design.tar.gz)",
+      "Bash(tar xzf *)",
+      "Bash(pnpm build *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(pnpm add *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:54876)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3001)",
+      "PowerShell(netstat -ano)",
+      "Bash(git commit -m 'Add deploy script: next build + wrangler deploy *)",
+      "Bash(pnpm -v)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:62101/)"
     ]
   }
 }

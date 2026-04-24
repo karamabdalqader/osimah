@@ -29,20 +29,20 @@ function ShaderCircle() {
       }
       void main(){
         vec2 uv=gl_FragCoord.xy/iResolution.xy;
-        uv.x*=1.5; uv.x-=0.25;
-        float mask=0.0;
-        float radius=.35;
+        float aspect=iResolution.x/iResolution.y;
+        uv.x=(uv.x-0.5)*aspect+0.5;
+        float radius=.46;
         vec2 center=vec2(.5);
-        mask+=paintCircle(uv,center,radius,.035).r;
-        mask+=paintCircle(uv,center,radius-.018,.01).r;
-        mask+=paintCircle(uv,center,radius+.018,.005).r;
+        float m1=paintCircle(uv,center,radius,.035).r;
+        float m2=paintCircle(uv,center,radius-.018,.01).r;
+        float m3=paintCircle(uv,center,radius+.018,.005).r;
+        float mask=clamp(m1+m2+m3,0.0,1.0);
         vec2 v=rotate2d(iTime)*uv;
         float pulse=0.5+0.5*sin(iTime*0.7+length(v)*4.0);
-        vec3 teal=vec3(0.059,0.639,0.612);
-        vec3 deep=vec3(0.031,0.420,0.400);
+        vec3 teal=vec3(0.082,0.847,0.733);
+        vec3 deep=vec3(0.031,0.533,0.478);
         vec3 fg=mix(deep,teal,pulse);
         vec3 color=mix(vec3(1.),fg,mask);
-        color=mix(color,vec3(1.),paintCircle(uv,center,radius,.003).r);
         gl_FragColor=vec4(color,1.);
       }`;
 
