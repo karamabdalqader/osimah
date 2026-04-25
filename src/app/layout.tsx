@@ -48,7 +48,13 @@ export const metadata: Metadata = {
     "Digital transformation KSA",
   ],
   authors: [{ name: "Osimah Digital" }],
-  icons: { icon: "/logo.PNG", apple: "/logo.PNG" },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/logo.PNG" },
+    ],
+    apple: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     url: SITE_URL,

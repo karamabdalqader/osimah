@@ -51,7 +51,7 @@ export function Cursor() {
         borderRadius: "50%",
         background: hovering ? "transparent" : "var(--teal)",
         border: hovering ? "1px solid var(--teal)" : "0",
-        mixBlendMode: hovering ? "difference" : "normal",
+        mixBlendMode: "normal",
         pointerEvents: "none",
         zIndex: 200,
       }}

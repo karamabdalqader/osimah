@@ -10,7 +10,7 @@ type Partner = {
 };
 
 const PARTNERS: Partner[] = [
-  { name: "Crafton", src: "/Crafton.jpg", alt: "Crafton", desc: "UX-driven digital agency — user research, UI/UX, design and digital strategy for regional leaders.", tag: "Agency · KSA" },
+  { name: "Crafton", src: "/Crafton.png", alt: "Crafton", desc: "UX-driven digital agency — user research, UI/UX, design and digital strategy for regional leaders.", tag: "Agency · KSA" },
   { name: "Webtown", src: "/Webtown.png", alt: "Webtown", desc: "Liferay Multinational Platinum Partner — portals, intranets and employee platforms since 2021.", tag: "Liferay Platinum" },
   { name: "STX Next", src: "/P(4).png", alt: "STX Next", desc: "EMEA engineering partner — Python, AI/ML and specialist capacity for complex platforms.", tag: "Engineering Partner" },
   { name: "Liferay", src: "/p.png", alt: "Liferay", desc: "Digital experience and portal platform — the backbone of our intranet and employee apps.", tag: "Platform Partner" },

@@ -79,10 +79,6 @@ export function Cta() {
           <h2 className="serif mt-4">
             Do you have a <em>big idea</em> we can help with?
           </h2>
-          <p className="mt-6" style={{ color: "#B5B9C2", fontSize: 17, maxWidth: "44ch", lineHeight: 1.6 }}>
-            Tell us what you&rsquo;re building. Our leadership reads every brief and responds within
-            two business days.
-          </p>
           <div
             className="mt-8"
             style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "12px 24px", fontSize: 14, color: "#B5B9C2" }}

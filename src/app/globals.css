@@ -583,6 +583,11 @@ section { padding: 120px 0; }
 }
 @media (max-width: 600px) {
   .brands__grid { grid-template-columns: 1fr; }
+  .brand__logo-wrap { justify-content: center; height: 96px; margin-bottom: 18px; overflow: visible; }
+  .brand__logo-img { height: 96px; max-width: 240px; object-position: center; }
+  .brand__logo-img[alt="Crafton"],
+  .brand__logo-img[alt="Sitecore"] { transform: scale(1.5); transform-origin: center; }
+  .brand__logo-img[alt="Liferay"] { transform: scale(2); transform-origin: center; }
   .leadership__grid { grid-template-columns: 1fr; gap: 28px; }
   .services__stats { grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 28px; padding-top: 22px; }
   .services__stat-n { font-size: clamp(1.4rem, 5.5vw, 1.9rem); }
@@ -605,7 +610,7 @@ section { padding: 120px 0; }
   .footer__top { gap: 32px; }
 
   /* Form: collapse 2-col fields, tighter padding so nothing clips */
-  .cta { padding: 56px 0; }
+  .cta { padding: 32px 0 56px; }
   .cta__grid { gap: 36px; }
   .cta__row { grid-template-columns: 1fr; gap: 12px; }
   .cta__form { padding: 20px; gap: 14px; }
@@ -619,7 +624,7 @@ section { padding: 120px 0; }
   .nav__cta-btn { display: none; }
 
   /* Hero: ring sits behind the headline so the title reads "inside" the circle */
-  .hero { padding: 96px 0 40px; overflow: visible; }
+  .hero { padding: 24px 0 32px; overflow: visible; }
   .hero__grid { grid-template-columns: 1fr; gap: 0; padding-bottom: 0; position: relative; }
   .hero__grid > div:first-child { position: relative; z-index: 2; }
   .hero__visual {
@@ -637,7 +642,7 @@ section { padding: 120px 0; }
     opacity: 0.4;
     pointer-events: none;
   }
-  .hero__sub { background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.85)); padding: 6px 0; }
+  .hero__sub { background: transparent; padding: 6px 0; }
 }
 
 /* Hamburger button: shown on mobile (hidden on desktop via min-width below) */
