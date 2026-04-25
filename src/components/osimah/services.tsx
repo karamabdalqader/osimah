@@ -1,5 +1,7 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Reveal } from "@/components/osimah/reveal";
 
 const TABS = [
   {
@@ -84,68 +86,96 @@ export function Services() {
   return (
     <section id="services">
       <div className="shell">
-        <div className="section-head">
-          <div className="section-head__kicker">
-            <div className="section-head__num">— 01 / Services</div>
-            <div className="eyebrow">What we do</div>
-          </div>
-          <div>
-            <h2 className="section-head__title serif">
-              A full-stack <em>digital house</em> for the Kingdom.
-            </h2>
-            <p className="section-head__lede">
-              Four disciplines, one delivery team. From research and design to integrations,
-              security and round-the-clock operations.
-            </p>
-          </div>
-        </div>
-
-        <div className="services__tabs" role="tablist">
-          {TABS.map((t) => (
-            <button
-              key={t.id}
-              role="tab"
-              aria-selected={active === t.id}
-              className={"services__tab " + (active === t.id ? "is-active" : "")}
-              onClick={() => setActive(t.id)}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
-
-        <div className="services__panel">
-          <div className="services__left">
-            <h3 className="serif">{tab.title}</h3>
-            <p>{tab.desc}</p>
-            <p>{tab.desc2}</p>
-            <div className="services__stats">
-              {tab.stats.map((s, i) => (
-                <div key={i}>
-                  <div className="services__stat-n serif">{s.n}</div>
-                  <div className="services__stat-l">{s.l}</div>
-                </div>
-              ))}
+        <Reveal>
+          <div className="section-head">
+            <div className="section-head__kicker">
+              <div className="section-head__num">— 01 / Services</div>
+              <div className="eyebrow">What we do</div>
+            </div>
+            <div>
+              <h2 className="section-head__title serif">
+                A full-stack <em>digital house</em> for the Kingdom.
+              </h2>
+              <p className="section-head__lede">
+                Four disciplines, one delivery team. From research and design to integrations,
+                security and round-the-clock operations.
+              </p>
             </div>
           </div>
+        </Reveal>
 
-          <div className="services__list">
-            {tab.items.map((it) => (
-              <div key={it.n} className="services__item">
-                <div className="services__item-num">{it.n}</div>
-                <div>
-                  <div className="services__item-name serif">{it.name}</div>
-                  <div className="services__item-desc">{it.d}</div>
-                </div>
-                <div className="services__item-arrow">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M7 17L17 7M17 7H8M17 7V16" />
-                  </svg>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="services__tabs" role="tablist">
+          {TABS.map((t) => {
+            const isActive = active === t.id;
+            return (
+              <button
+                key={t.id}
+                role="tab"
+                aria-selected={isActive}
+                className={"services__tab " + (isActive ? "is-active" : "")}
+                onClick={() => setActive(t.id)}
+                style={{ color: isActive ? "var(--paper)" : undefined, background: "transparent" }}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="services-tab-bg"
+                    className="services__tab-bg"
+                    transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                  />
+                )}
+                <span style={{ position: "relative" }}>{t.label}</span>
+              </button>
+            );
+          })}
         </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={tab.id}
+            className="services__panel"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <div className="services__left">
+              <h3 className="serif">{tab.title}</h3>
+              <p>{tab.desc}</p>
+              <p>{tab.desc2}</p>
+              <div className="services__stats">
+                {tab.stats.map((s, i) => (
+                  <div key={i}>
+                    <div className="services__stat-n serif">{s.n}</div>
+                    <div className="services__stat-l">{s.l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="services__list">
+              {tab.items.map((it, i) => (
+                <motion.div
+                  key={it.n}
+                  className="services__item"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.45, delay: 0.05 + i * 0.06, ease: "easeOut" }}
+                >
+                  <div className="services__item-num">{it.n}</div>
+                  <div>
+                    <div className="services__item-name serif">{it.name}</div>
+                    <div className="services__item-desc">{it.d}</div>
+                  </div>
+                  <div className="services__item-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17L17 7M17 7H8M17 7V16" />
+                    </svg>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </section>
   );

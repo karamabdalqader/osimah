@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { Reveal } from "@/components/osimah/reveal";
 
 const FAQS = [
   {
@@ -33,7 +34,7 @@ export function Faq() {
   return (
     <section id="faq">
       <div className="shell faq__grid">
-        <div>
+        <Reveal>
           <div className="section-head__num">— 06 / FAQ</div>
           <div className="eyebrow mt-2">Frequently asked</div>
           <h2
@@ -51,7 +52,7 @@ export function Faq() {
               <path d="M7 17L17 7M17 7H8M17 7V16" />
             </svg>
           </a>
-        </div>
+        </Reveal>
 
         <div className="faq__list">
           {FAQS.map((f, i) => (

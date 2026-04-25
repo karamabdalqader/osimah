@@ -1,5 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { Reveal } from "@/components/osimah/reveal";
 
 const PROJECTS = [
   { id: "neom", name: "NEOM", tag: "Giga · Website", category: "giga", image: "/o3.PNG" },
@@ -29,43 +31,71 @@ export function Projects() {
   return (
     <section id="projects">
       <div className="shell">
-        <div className="projects__head">
-          <div className="eyebrow">Selected work · Portfolio</div>
-          <h2 className="projects__title serif">
-            Work we&rsquo;re <em>proud</em> to put our name on.
-          </h2>
-          <p className="projects__lede">
-            Ministries, giga-projects and enterprise programs — delivered with global platforms and
-            regional teams.
-          </p>
+        <Reveal>
+          <div className="projects__head">
+            <div className="eyebrow">Selected work · Portfolio</div>
+            <h2 className="projects__title serif">
+              Work we&rsquo;re <em>proud</em> to put our name on.
+            </h2>
+            <p className="projects__lede">
+              Ministries, giga-projects and enterprise programs — delivered with global platforms and
+              regional teams.
+            </p>
 
-          <div className="projects__filters">
-            {FILTERS.map((f) => (
-              <button
-                key={f.id}
-                onClick={() => setFilter(f.id)}
-                className={"filter-chip " + (filter === f.id ? "is-active" : "")}
-              >
-                {f.label}
-              </button>
-            ))}
+            <div className="projects__filters" role="tablist">
+              {FILTERS.map((f) => {
+                const isActive = filter === f.id;
+                return (
+                  <button
+                    key={f.id}
+                    onClick={() => setFilter(f.id)}
+                    className={"filter-chip " + (isActive ? "is-active" : "")}
+                    aria-pressed={isActive}
+                    style={{
+                      background: "transparent",
+                      color: isActive ? "var(--paper)" : undefined,
+                      borderColor: isActive ? "var(--ink)" : undefined,
+                    }}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="filter-chip-bg"
+                        className="filter-chip__bg"
+                        transition={{ type: "spring", stiffness: 380, damping: 32 }}
+                      />
+                    )}
+                    <span style={{ position: "relative" }}>{f.label}</span>
+                  </button>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="projects__grid">
-          {list.map((p) => (
-            <figure key={p.id} className="project">
-              <div className="project__frame">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.image} alt={p.name} />
-              </div>
-              <figcaption className="project__caption">
-                <span className="project__tag">{p.tag}</span>
-                <span className="project__name">{p.name}</span>
-              </figcaption>
-            </figure>
-          ))}
-        </div>
+        <motion.div className="projects__grid" layout>
+          <AnimatePresence mode="popLayout">
+            {list.map((p, i) => (
+              <motion.figure
+                key={p.id}
+                className="project"
+                layout
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.5, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="project__frame">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={p.image} alt={p.name} />
+                </div>
+                <figcaption className="project__caption">
+                  <span className="project__tag">{p.tag}</span>
+                  <span className="project__name">{p.name}</span>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

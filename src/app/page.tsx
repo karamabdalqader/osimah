@@ -10,6 +10,7 @@ import { Faq } from "@/components/osimah/faq";
 import { Cta } from "@/components/osimah/cta";
 import { Footer } from "@/components/osimah/footer";
 import { CircularTestimonials } from "@/components/osimah/circular-testimonials";
+import { Stats } from "@/components/osimah/stats";
 
 const TESTIMONIALS = [
   {
@@ -52,6 +53,7 @@ export default function Home() {
         <Hero />
         <Partners />
         <Services />
+        <Stats />
         <Leadership />
         <Projects />
         <section className="testimonials" id="testimonials">

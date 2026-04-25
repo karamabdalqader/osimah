@@ -1,8 +1,13 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { useMagnetic } from "@/lib/use-magnetic";
 
 function ShaderCircle() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 600], [0, -60]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -92,53 +97,94 @@ function ShaderCircle() {
   }, []);
 
   return (
-    <div className="hero__visual">
+    <motion.div ref={wrapRef} className="hero__visual" style={{ y }}>
       <canvas ref={canvasRef} className="hero__canvas" />
-    </div>
+    </motion.div>
   );
 }
 
-const MARQUEE = [
-  "Branding", "UX Design", "UI Design", "Front-end", "Back-end",
-  "Integrations", "Server Config", "Security", "Deployment",
+const TITLE_LINES = [
+  ["Enabling", "the"],
+  ["Kingdom\u2019s"],
+  ["digital", "future."],
 ];
 
+function TitleReveal() {
+  const reduce = useReducedMotion();
+  return (
+    <h1 className="serif hero__title mt-6">
+      {TITLE_LINES.map((line, li) => (
+        <span key={li} className="hero__title-row">
+          {line.map((word, wi) => {
+            const isAccent = word.startsWith("Kingdom");
+            const inner = isAccent ? <em>{word}</em> : word;
+            const delay = (li * line.length + wi) * 0.08 + 0.05;
+            return (
+              <span key={wi} className="hero__word-mask">
+                <motion.span
+                  className="hero__word"
+                  initial={reduce ? { opacity: 0 } : { y: "110%", opacity: 0 }}
+                  animate={reduce ? { opacity: 1 } : { y: "0%", opacity: 1 }}
+                  transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay }}
+                >
+                  {inner}
+                  {wi < line.length - 1 ? "\u00A0" : ""}
+                </motion.span>
+              </span>
+            );
+          })}
+        </span>
+      ))}
+    </h1>
+  );
+}
+
 export function Hero() {
+  const ctaRef = useMagnetic<HTMLAnchorElement>(0.3, 110);
+  const reduce = useReducedMotion();
+
   return (
     <section className="hero" id="top">
       <div className="shell">
         <div className="hero__grid">
           <div>
-            <div className="eyebrow eyebrow-dot">A Saudi Technology House · Est. 2017</div>
-            <h1 className="serif hero__title mt-6">
-              Enabling the <em>Kingdom&rsquo;s</em> digital future.
-            </h1>
-            <p className="hero__sub">
+            <motion.div
+              className="eyebrow eyebrow-dot"
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              A Saudi Technology House · Est. 2017
+            </motion.div>
+            <TitleReveal />
+            <motion.p
+              className="hero__sub"
+              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
+            >
               Osimah Digital builds end-to-end digital experiences for Saudi Arabia&rsquo;s
               ministries, giga-projects and leading enterprises — uniting global platforms,
               regional expertise, and a family of brands under one trusted house.
-            </p>
-            <div className="hero__ctas">
-              <a href="#contact" className="btn btn--primary">
-                Start a conversation
+            </motion.p>
+            <motion.div
+              className="hero__ctas"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
+            >
+              <a ref={ctaRef} href="#contact" className="btn btn--primary">
+                Start a project
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M7 17L17 7M17 7H8M17 7V16" />
                 </svg>
               </a>
               <a href="#projects" className="btn btn--ghost">
-                See selected work
+                See our work
               </a>
-            </div>
+            </motion.div>
           </div>
           <ShaderCircle />
-        </div>
-
-        <div className="hero__marquee">
-          <div className="hero__marquee-track">
-            {[...MARQUEE, ...MARQUEE].map((w, i) => (
-              <span key={i} className="hero__marquee-item">{w}</span>
-            ))}
-          </div>
         </div>
       </div>
     </section>
