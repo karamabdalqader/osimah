@@ -624,7 +624,21 @@ section { padding: 120px 0; }
   .services__panel { gap: 28px; }
   .ct2__arrows { gap: 8px; }
   .ct2__arrow { width: 40px; height: 40px; }
-  .footer__top { gap: 32px; }
+
+  .footer { padding: 48px 0 28px; }
+  .footer__top { gap: 28px; padding-bottom: 32px; }
+  .footer__brand img { height: 30px !important; margin-bottom: 16px !important; }
+  .footer__brand h3 { font-size: clamp(24px, 7vw, 30px); max-width: none; }
+  .footer__brand p { margin-top: 14px; font-size: 13px; max-width: none; }
+  .footer__col h5 { margin-bottom: 12px; }
+  .footer__col ul { gap: 8px; }
+  .footer__bottom {
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    font-size: 11px;
+  }
 
   /* Form: collapse 2-col fields, tighter padding so nothing clips */
   .cta { padding: 32px 0 56px; }

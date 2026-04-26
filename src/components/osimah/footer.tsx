@@ -40,7 +40,6 @@ export function Footer() {
             <ul>
               <li><a href="#contact">Start a project</a></li>
               <li><a href="mailto:hello@osimah.sa">hello@osimah.sa</a></li>
-              <li><a href="https://osimah.sa" target="_blank" rel="noopener">osimah.sa</a></li>
               <li><a href="#">LinkedIn</a></li>
             </ul>
           </div>
