@@ -82,7 +82,12 @@ export function Leadership() {
                 <div className="leader__quote">
                   &ldquo;We measure ourselves in mandates kept, not headlines won.&rdquo;
                 </div>
-                <a className="leader__linked" href="#" onClick={(e) => e.preventDefault()}>
+                <a
+                  className="leader__linked"
+                  href="https://www.linkedin.com/in/abdullah-alsharqi-05b95720/"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <LinkedInIcon />
                   View profile
                 </a>
