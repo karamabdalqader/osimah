@@ -362,6 +362,23 @@ section { padding: 120px 0; }
 .project__name { font-family: var(--font-serif); font-size: 20px; line-height: 1.2; color: var(--ink); letter-spacing: -0.01em; }
 .project__tag { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
 
+.projects__more-wrap { display: flex; justify-content: center; margin-top: 56px; }
+.projects__more {
+  appearance: none;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease;
+}
+.projects__more:hover { background: var(--ink); color: var(--paper); }
+
 .brands { background: #FFFFFF; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .brands__grid {
   display: grid;
