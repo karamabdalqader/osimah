@@ -44,7 +44,7 @@ export function Faq() {
             Answers for <em>serious</em> programs.
           </h2>
           <p className="mt-4" style={{ color: "var(--ink-2)", fontSize: 15, maxWidth: "36ch" }}>
-            Still have questions? Our leadership reads every inbound brief.
+            Still have questions?
           </p>
           <a href="#contact" className="btn btn--ghost btn--sm" style={{ marginTop: 24 }}>
             Talk to us
