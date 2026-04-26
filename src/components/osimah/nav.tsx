@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 
 const ITEMS = [
-  { href: "#about", label: "About" },
   { href: "#services", label: "Services" },
   { href: "#leadership", label: "Leadership" },
   { href: "#projects", label: "Projects" },
