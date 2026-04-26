@@ -5,27 +5,27 @@ import { Reveal } from "@/components/osimah/reveal";
 const FAQS = [
   {
     q: "What makes Osimah Digital different from other agencies in the Kingdom?",
-    a: "We're a Saudi technology house, not just an agency. That means we own the full stack — research, design, engineering, infrastructure and 24/7 operations — and we represent multiple global platform partners under one roof. One accountable team, from first brief to production uptime.",
+    a: "We're a Saudi technology house, not just an agency. We own the full stack — research, design, engineering, infrastructure and 24/7 operations — and we represent global platform partners under one roof. One accountable team, from first brief to production uptime.",
   },
   {
     q: "Are you DGA-approved for government engagements?",
-    a: "Yes. Our delivery aligns to the Digital Government Authority's unified design system and compliance requirements. We've shipped DGA-approved platforms for the Ministry of Transport, Ministry of Justice, Ministry of Finance and the Real Estate General Authority.",
+    a: "Yes. Our delivery aligns to the Digital Government Authority's unified design system and compliance requirements. We've shipped DGA-approved platforms for the Ministry of Transport, Ministry of Justice, Ministry of Finance, the Saudi Authority for Intellectual Property and the Real Estate General Authority.",
   },
   {
     q: "Which platforms do you specialize in?",
-    a: "Sitecore, Adobe Experience Cloud, Liferay (Multinational Platinum), Umbraco and SharePoint — covering the DXP, portal and content management needs of ministries and enterprises. We also build on modern composable and headless stacks where they fit.",
+    a: "Sitecore, Liferay (Multinational Platinum) and Squirro for cognitive search — covering the DXP, portal, intranet and AI-search needs of ministries and enterprises. We also build on modern composable and headless stacks where they fit.",
   },
   {
     q: "Where is your team based?",
-    a: "Headquartered in Riyadh since 2017. We operate through our family of brands — Crafton Middle East, Interllias, Webtown and Kogifi Saudi — with delivery partners across EMEA for specialist capacity.",
+    a: "Headquartered in Riyadh since 2017. We operate through our family of partners — Crafton Middle East, Webtown, STX Next, Liferay, Sitecore and Squirro — with delivery partners across EMEA for specialist capacity.",
   },
   {
     q: "What does a typical engagement look like?",
-    a: "Most engagements start with a discovery sprint (2–4 weeks) to align on audience, scope and compliance. From there, we move into iterative design, engineering and integration — shipping to a staging environment every two weeks. Production launch includes hypercare, then we can operate and evolve the platform long-term.",
+    a: "Most engagements start with a discovery sprint (2–4 weeks) to align on audience, scope and compliance. From there, we move into iterative design, engineering and integration — shipping to a staging environment every two weeks. Production launch includes hypercare, then we operate and evolve the platform long-term.",
   },
   {
     q: "Do you take on work outside Saudi Arabia?",
-    a: "Our focus is the Kingdom and the wider GCC, but we've delivered programs across the Middle East through our regional brands. If the project serves a Saudi audience, we're interested.",
+    a: "Our focus is the Kingdom and the wider GCC, but we've delivered programs across the Middle East through our partner brands. If the project serves a Saudi audience, we're interested.",
   },
 ];
 
