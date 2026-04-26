@@ -401,8 +401,8 @@ section { padding: 120px 0; }
 .brand__logo-wrap { height: 110px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 22px; }
 .brand__logo-img { height: 110px; width: auto; max-width: 280px; object-fit: contain; object-position: left center; filter: grayscale(0.1); transition: filter 0.25s ease; }
 .brand__logo-img[alt="Crafton"],
-.brand__logo-img[alt="Liferay"],
 .brand__logo-img[alt="Sitecore"] { transform: scale(1.6); transform-origin: left center; }
+.brand__logo-img[alt="Liferay"] { transform: scale(2.4); transform-origin: left center; }
 .brand:hover .brand__logo-img { filter: none; }
 .brand__wordmark { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-sans); font-size: 30px; font-weight: 700; letter-spacing: -0.02em; color: #2A2D33; }
 .brand__wordmark-mark { display: inline-flex; align-items: center; }
