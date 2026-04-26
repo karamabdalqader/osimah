@@ -45,7 +45,8 @@
       "Bash(timeout 30 npx tsc --noEmit)",
       "Bash(curl -s -o /tmp/page.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3001/)",
       "Bash(netstat -ano)",
-      "Bash(taskkill //PID 4704 //F)"
+      "Bash(taskkill //PID 4704 //F)",
+      "Bash(npm run *)"
     ]
   }
 }

@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
 
 const PROJECTS = [
-  { id: "neom", name: "NEOM", tag: "Giga · Website", category: "giga", image: "/o3.PNG" },
-  { id: "mot", name: "Ministry of Transport", tag: "Government · Web", category: "gov", image: "/o7.PNG" },
-  { id: "moj", name: "Saudi Authority for Intellectual Property", tag: "Government · Web & Mobile", category: "gov", image: "/o8.PNG" },
-  { id: "rsg", name: "Red Sea Global", tag: "Giga · Employee Super-App", category: "giga", image: "/o9.PNG" },
-  { id: "kapsarc", name: "KAPSARC", tag: "Enterprise · Research Portal", category: "enterprise", image: "/o10.PNG" },
-  { id: "sidf", name: "Saudi Industrial Development Fund", tag: "Enterprise · Intranet", category: "enterprise", image: "/o21.PNG" },
-  { id: "alula", name: "Royal Commission for AlUla", tag: "Government · Intranet", category: "gov", image: "/o17.PNG" },
-  { id: "mbs", name: "Misk Foundation", tag: "Giga · Mobile App", category: "giga", image: "/o19.PNG" },
-  { id: "invest", name: "Invest Saudi", tag: "Government · Web", category: "gov", image: "/o5.PNG" },
+  { id: "neom-rsg", name: "NEOM × Red Sea Global", tag: "Giga · Websites", category: "giga", image: "/o3.PNG" },
+  { id: "mot-rega", name: "Ministry of Transport × Real Estate General Authority", tag: "Government · Websites", category: "gov", image: "/o7.PNG" },
+  { id: "moj-mof", name: "Ministry of Justice × Ministry of Finance", tag: "Government · Web Platforms", category: "gov", image: "/o8.PNG" },
+  { id: "saip", name: "Saudi Authority for Intellectual Property", tag: "Government · Trademarks Platform", category: "gov", image: "/o9.PNG" },
+  { id: "kapsarc", name: "KAPSARC × KAPSARC College", tag: "Enterprise · Research Portals", category: "enterprise", image: "/o10.PNG" },
+  { id: "sidf-hevolution", name: "SIDF × Hevolution", tag: "Enterprise · Intranets", category: "enterprise", image: "/o17.PNG" },
+  { id: "hayyak", name: "Hayyak by stc", tag: "Enterprise · Mobile App", category: "enterprise", image: "/o21.PNG" },
+  { id: "misk-city", name: "Misk City", tag: "Giga · Mobile App", category: "giga", image: "/o19.PNG" },
+  { id: "invest-g20", name: "Invest Saudi × G20", tag: "Government · Websites", category: "gov", image: "/o5.PNG" },
 ];
 
 const FILTERS = [
