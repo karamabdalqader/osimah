@@ -23,7 +23,7 @@ const TESTIMONIALS = [
     quote: "Their Liferay implementation transformed how our employees interact with internal systems. The delivery team understood government compliance from day one.",
     name: "Red Sea Global",
     designation: "Giga-project · Employee Super-App",
-    src: "/o9.PNG",
+    src: "/o18.PNG",
   },
   {
     quote: "We needed a partner who could navigate both DGA requirements and a complex stakeholder map. Osimah did exactly that — on schedule and above spec.",
