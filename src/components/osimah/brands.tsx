@@ -23,6 +23,18 @@ function Logo({ b }: { b: Partner }) {
   return <img src={b.src} alt={b.alt} className="brand__logo-img" />;
 }
 
+function relationFor(name: string) {
+  const relations: Record<string, string> = {
+    Crafton: "Design studio inside the Osimah delivery house.",
+    Webtown: "Portal delivery partner for enterprise and government teams.",
+    "STX Next": "Specialist engineering capacity for complex builds.",
+    Liferay: "Core portal platform for employee and service ecosystems.",
+    Sitecore: "Enterprise DXP partner for content-led programs.",
+    Squirro: "AI search layer for knowledge-heavy organizations.",
+  };
+  return relations[name] ?? "Trusted delivery partner in the Osimah network.";
+}
+
 export function Brands() {
   return (
     <section className="brands" id="brands">
@@ -54,6 +66,7 @@ export function Brands() {
                     <Logo b={b} />
                   </div>
                   <div className="brand__desc">{b.desc}</div>
+                  <div className="brand__relation">{relationFor(b.name)}</div>
                 </div>
                 <div className="brand__foot">
                   <span>{b.tag}</span>

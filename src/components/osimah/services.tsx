@@ -83,6 +83,14 @@ const TABS = [
 export function Services() {
   const [active, setActive] = useState("digital");
   const tab = TABS.find((t) => t.id === active)!;
+  const changeByOffset = (offset: number) => {
+    const index = TABS.findIndex((t) => t.id === active);
+    const next = TABS[(index + offset + TABS.length) % TABS.length];
+    setActive(next.id);
+    requestAnimationFrame(() => {
+      document.querySelector<HTMLButtonElement>(`[data-service-tab="${next.id}"]`)?.focus();
+    });
+  };
   return (
     <section id="services">
       <div className="shell">
@@ -112,8 +120,20 @@ export function Services() {
                 key={t.id}
                 role="tab"
                 aria-selected={isActive}
+                tabIndex={isActive ? 0 : -1}
+                data-service-tab={t.id}
                 className={"services__tab " + (isActive ? "is-active" : "")}
                 onClick={() => setActive(t.id)}
+                onKeyDown={(e) => {
+                  if (e.key === "ArrowRight") {
+                    e.preventDefault();
+                    changeByOffset(1);
+                  }
+                  if (e.key === "ArrowLeft") {
+                    e.preventDefault();
+                    changeByOffset(-1);
+                  }
+                }}
                 style={{ color: isActive ? "var(--paper)" : undefined, background: "transparent" }}
               >
                 {isActive && (
@@ -173,6 +193,12 @@ export function Services() {
                   </div>
                 </motion.div>
               ))}
+              <a className="services__related" href="#projects">
+                View related work
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 17L17 7M17 7H8M17 7V16" />
+                </svg>
+              </a>
             </div>
           </motion.div>
         </AnimatePresence>

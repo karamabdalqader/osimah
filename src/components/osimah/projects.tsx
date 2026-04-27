@@ -1,9 +1,17 @@
 "use client";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
 
-const PROJECTS = [
+type Project = {
+  id: string;
+  name: string;
+  tag: string;
+  category: "gov" | "giga" | "enterprise";
+  image: string;
+};
+
+const PROJECTS: Project[] = [
   { id: "neom-rsg", name: "NEOM × Red Sea Global", tag: "Giga · Websites", category: "giga", image: "/o3.PNG" },
   { id: "mot-rega", name: "Ministry of Transport × Real Estate General Authority", tag: "Government · Websites", category: "gov", image: "/o7.PNG" },
   { id: "moj-mof", name: "Ministry of Justice × Ministry of Finance", tag: "Government · Web Platforms", category: "gov", image: "/o8.PNG" },
@@ -36,9 +44,31 @@ const FILTERS = [
   { id: "enterprise", label: "Enterprise" },
 ];
 
+const CASE_STUDY: Record<Project["category"], { challenge: string; scope: string; platforms: string; impact: string }> = {
+  gov: {
+    challenge: "Unify public-service journeys, compliance, and stakeholder needs into a platform that citizens can trust.",
+    scope: "Discovery, DGA-aligned UX, bilingual interface design, front-end engineering, integration support, and launch readiness.",
+    platforms: "React, Next.js, Liferay, SharePoint, Sitecore, secure API integrations.",
+    impact: "A clearer service experience with stronger governance, faster publishing workflows, and a more transparent public interface.",
+  },
+  giga: {
+    challenge: "Create destination-scale digital experiences that can carry complex programs, multiple audiences, and future growth.",
+    scope: "Experience strategy, editorial IA, immersive UI, design systems, content platform build, and ongoing optimization.",
+    platforms: "Sitecore, Adobe DXP, headless CMS, Next.js, analytics, and cloud hosting.",
+    impact: "A premium digital presence that helps giga-project teams communicate ambition, progress, and visitor or investor journeys.",
+  },
+  enterprise: {
+    challenge: "Modernize internal and customer-facing platforms while protecting operational continuity.",
+    scope: "UX research, portal architecture, product UI, intranet workflows, system integrations, and managed operations.",
+    platforms: "Liferay, Microsoft stack, React, Node, Python, CRM/ERP integrations, cognitive search.",
+    impact: "Higher adoption, easier content operations, and more resilient platforms for employees, customers, and partners.",
+  },
+};
+
 export function Projects() {
   const [filter, setFilter] = useState("all");
   const [expanded, setExpanded] = useState(false);
+  const [selected, setSelected] = useState<Project | null>(null);
   const list = useMemo(
     () => PROJECTS.filter((p) => filter === "all" || p.category === filter),
     [filter]
@@ -49,6 +79,19 @@ export function Projects() {
     setFilter(nextFilter);
     setExpanded(false);
   };
+
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [selected]);
 
   return (
     <section id="projects">
@@ -102,7 +145,7 @@ export function Projects() {
         <motion.div className="projects__grid" layout>
           <AnimatePresence mode="popLayout">
             {visible.map((p, i) => (
-              <motion.figure
+            <motion.figure
                 key={p.id}
                 className="project"
                 layout
@@ -111,10 +154,21 @@ export function Projects() {
                 exit={{ opacity: 0, y: -8 }}
                 transition={{ duration: 0.5, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="project__frame">
+                <button
+                  type="button"
+                  className="project__frame"
+                  onClick={() => setSelected(p)}
+                  aria-label={`Open case study for ${p.name}`}
+                >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={p.image} alt={p.name} />
-                </div>
+                  <span className="project__open">
+                    View case study
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17L17 7M17 7H8M17 7V16" />
+                    </svg>
+                  </span>
+                </button>
                 <figcaption className="project__caption">
                   <span className="project__tag">{p.tag}</span>
                   <span className="project__name">{p.name}</span>
@@ -136,6 +190,57 @@ export function Projects() {
             </button>
           </div>
         )}
+
+        <AnimatePresence>
+          {selected && (
+            <motion.div
+              className="case-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="case-title"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <button className="case-modal__backdrop" type="button" aria-label="Close case study" onClick={() => setSelected(null)} />
+              <motion.div
+                className="case-modal__panel"
+                initial={{ x: 40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 40, opacity: 0 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <button className="case-modal__close" type="button" onClick={() => setSelected(null)} aria-label="Close">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M18 6 6 18M6 6l12 12" />
+                  </svg>
+                </button>
+                <div className="case-modal__media">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={selected.image} alt="" />
+                </div>
+                <div className="case-modal__body">
+                  <div className="project__tag">{selected.tag}</div>
+                  <h3 id="case-title" className="serif">{selected.name}</h3>
+                  <div className="case-modal__facts">
+                    {Object.entries(CASE_STUDY[selected.category]).map(([label, value]) => (
+                      <div key={label} className="case-modal__fact">
+                        <span>{label}</span>
+                        <p>{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <a href="#contact" className="btn btn--primary" onClick={() => setSelected(null)}>
+                    Discuss a similar project
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M7 17L17 7M17 7H8M17 7V16" />
+                    </svg>
+                  </a>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );

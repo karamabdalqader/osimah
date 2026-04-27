@@ -14,12 +14,31 @@ const ITEMS = [
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#top");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 320);
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const ids = ["top", ...ITEMS.map((i) => i.href.slice(1))];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setActive(`#${visible.target.id}`);
+      },
+      { rootMargin: "-22% 0px -58% 0px", threshold: [0.1, 0.35, 0.6] }
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -39,7 +58,7 @@ export function Nav() {
         </a>
         <div className="nav__links">
           {ITEMS.map((i) => (
-            <a key={i.href} href={i.href}>
+            <a key={i.href} href={i.href} className={active === i.href ? "is-active" : ""}>
               {i.label}
             </a>
           ))}

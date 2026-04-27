@@ -57,7 +57,12 @@ export function Faq() {
         <div className="faq__list">
           {FAQS.map((f, i) => (
             <div key={i} className={"faq__item " + (open === i ? "is-open" : "")}>
-              <button className="faq__q serif" onClick={() => setOpen(open === i ? -1 : i)}>
+              <button
+                className="faq__q serif"
+                onClick={() => setOpen(open === i ? -1 : i)}
+                aria-expanded={open === i}
+                aria-controls={`faq-panel-${i}`}
+              >
                 {f.q}
                 <span className="faq__icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -65,7 +70,7 @@ export function Faq() {
                   </svg>
                 </span>
               </button>
-              <div className="faq__a">{f.a}</div>
+              <div id={`faq-panel-${i}`} className="faq__a">{f.a}</div>
             </div>
           ))}
         </div>

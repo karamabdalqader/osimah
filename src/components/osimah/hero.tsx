@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import { motion, useReducedMotion, useScroll, useTransform } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import { useMagnetic } from "@/lib/use-magnetic";
 
 function ShaderCircle() {
@@ -110,7 +110,6 @@ const TITLE_LINES = [
 ];
 
 function TitleReveal() {
-  const reduce = useReducedMotion();
   return (
     <h1 className="serif hero__title mt-6">
       {TITLE_LINES.map((line, li) => (
@@ -123,8 +122,8 @@ function TitleReveal() {
               <span key={wi} className="hero__word-mask">
                 <motion.span
                   className="hero__word"
-                  initial={reduce ? { opacity: 0 } : { y: "110%", opacity: 0 }}
-                  animate={reduce ? { opacity: 1 } : { y: "0%", opacity: 1 }}
+                  initial={{ y: "0%", opacity: 1 }}
+                  animate={{ y: "0%", opacity: 1 }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay }}
                 >
                   {inner}
@@ -141,7 +140,6 @@ function TitleReveal() {
 
 export function Hero() {
   const ctaRef = useMagnetic<HTMLAnchorElement>(0.3, 110);
-  const reduce = useReducedMotion();
 
   return (
     <section className="hero" id="top">
@@ -150,7 +148,7 @@ export function Hero() {
           <div>
             <motion.div
               className="eyebrow eyebrow-dot"
-              initial={{ opacity: 0, y: 8 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
             >
@@ -159,7 +157,7 @@ export function Hero() {
             <TitleReveal />
             <motion.p
               className="hero__sub"
-              initial={reduce ? { opacity: 0 } : { opacity: 0, y: 12 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, ease: "easeOut", delay: 0.55 }}
             >
@@ -169,7 +167,7 @@ export function Hero() {
             </motion.p>
             <motion.div
               className="hero__ctas"
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 1, y: 0 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }}
             >

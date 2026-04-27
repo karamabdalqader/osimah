@@ -60,7 +60,6 @@ export const CircularTestimonials = ({ testimonials, autoplay = true }: Circular
         >
           <AnimatePresence mode="wait">
             <motion.img
-              // eslint-disable-next-line @next/next/no-img-element
               key={active.src}
               src={active.src}
               alt={active.name}
@@ -72,6 +71,7 @@ export const CircularTestimonials = ({ testimonials, autoplay = true }: Circular
               draggable={false}
             />
           </AnimatePresence>
+          <div className="ct2__drag-hint" aria-hidden>Drag or swipe</div>
         </motion.div>
 
         <div className="ct2__content">

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useId, useRef, useState } from "react"
+import React, { useEffect, useId, useMemo, useRef, useState } from "react"
 import { motion } from "motion/react"
 
 import { cn } from "@/lib/utils"
@@ -90,23 +90,22 @@ export function DotPattern({
     return () => window.removeEventListener("resize", updateDimensions)
   }, [])
 
-  const dots = Array.from(
-    {
-      length:
-        Math.ceil(dimensions.width / width) *
-        Math.ceil(dimensions.height / height),
-    },
-    (_, i) => {
-      const col = i % Math.ceil(dimensions.width / width)
-      const row = Math.floor(i / Math.ceil(dimensions.width / width))
+  const dots = useMemo(() => {
+    const cols = Math.ceil(dimensions.width / width)
+    const rows = Math.ceil(dimensions.height / height)
+    return Array.from({ length: cols * rows }, (_, i) => {
+      const col = i % cols
+      const row = Math.floor(i / cols)
+      const seed = (i * 9301 + 49297) % 233280
+      const seed2 = (i * 23399 + 15313) % 233280
       return {
-        x: col * width + cx,
-        y: row * height + cy,
-        delay: Math.random() * 5,
-        duration: Math.random() * 3 + 2,
+        x: x + col * width + cx,
+        y: y + row * height + cy,
+        delay: (seed / 233280) * 5,
+        duration: (seed2 / 233280) * 3 + 2,
       }
-    }
-  )
+    })
+  }, [dimensions.height, dimensions.width, width, height, x, y, cx, cy])
 
   return (
     <svg
@@ -124,7 +123,7 @@ export function DotPattern({
           <stop offset="100%" stopColor="currentColor" stopOpacity="0" />
         </radialGradient>
       </defs>
-      {dots.map((dot, index) => (
+      {dots.map((dot) => (
         <motion.circle
           key={`${dot.x}-${dot.y}`}
           cx={dot.x}

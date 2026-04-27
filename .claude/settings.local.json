@@ -46,7 +46,16 @@
       "Bash(curl -s -o /tmp/page.html -w \"HTTP %{http_code}\\\\n\" http://localhost:3001/)",
       "Bash(netstat -ano)",
       "Bash(taskkill //PID 4704 //F)",
-      "Bash(npm run *)"
+      "Bash(npm run *)",
+      "Bash(git -C \"C:/Users/i7-9700k/Downloads/Osimah C\" status)",
+      "Bash(git -C \"C:/Users/i7-9700k/Downloads/Osimah C\" add src/components/osimah/nav.tsx)",
+      "Bash(git -C 'C:/Users/i7-9700k/Downloads/Osimah C' commit -m ' *)",
+      "Bash(git -C \"C:/Users/i7-9700k/Downloads/Osimah C\" push origin master)",
+      "Bash(tasklist //FI \"IMAGENAME eq node.exe\")",
+      "Bash(wmic process *)",
+      "Bash(taskkill //F //PID 13076)",
+      "Bash(git pull *)",
+      "Bash(git remote *)"
     ]
   }
 }

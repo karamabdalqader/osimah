@@ -9,6 +9,13 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "";
 const FALLBACK_EMAIL = "hello@osimah.com";
+const FIELD_MESSAGES: Record<FieldKey, string> = {
+  name: "Use at least 2 characters.",
+  email: "Use a valid work email.",
+  company: "Tell us the organization name.",
+  service: "Choose the closest service area.",
+  message: "Share at least 10 characters so we can route the brief.",
+};
 
 export function Cta() {
   const [form, setForm] = useState<Form>({ name: "", email: "", company: "", service: "", message: "" });
@@ -68,6 +75,8 @@ export function Cta() {
   };
 
   const fieldClass = (k: FieldKey) => `cta__field cta__field--float ${form[k] ? "is-filled" : ""}`;
+  const showError = (k: FieldKey) => Boolean(touched[k] && !valid[k]);
+  const guideClass = (k: FieldKey) => `cta__field-error ${showError(k) ? "" : "is-hint"}`;
 
   return (
     <section className="cta" id="contact">
@@ -139,47 +148,66 @@ export function Cta() {
             >
               <div className="cta__form-title">Start a project · Confidential</div>
 
+              <p className="cta__hint">
+                If the secure form endpoint is unavailable, this opens a prepared email to {FALLBACK_EMAIL}.
+              </p>
+
               <div className={fieldClass("name")}>
-                <label>Your name</label>
+                <label htmlFor="brief-name">Your name</label>
                 <input
+                  id="brief-name"
                   type="text"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   onBlur={() => setTouched({ ...touched, name: true })}
                   style={fieldStyle("name")}
+                  aria-invalid={showError("name")}
+                  aria-describedby={!valid.name ? "brief-name-error" : undefined}
                 />
+                {!valid.name && <span id="brief-name-error" className={guideClass("name")}>{FIELD_MESSAGES.name}</span>}
               </div>
 
               <div className="cta__row">
                 <div className={fieldClass("email")}>
-                  <label>Work email</label>
+                  <label htmlFor="brief-email">Work email</label>
                   <input
+                    id="brief-email"
                     type="email"
                     value={form.email}
                     onChange={(e) => setForm({ ...form, email: e.target.value })}
                     onBlur={() => setTouched({ ...touched, email: true })}
                     style={fieldStyle("email")}
+                    aria-invalid={showError("email")}
+                    aria-describedby={!valid.email ? "brief-email-error" : undefined}
                   />
+                  {!valid.email && <span id="brief-email-error" className={guideClass("email")}>{FIELD_MESSAGES.email}</span>}
                 </div>
                 <div className={fieldClass("company")}>
-                  <label>Organization</label>
+                  <label htmlFor="brief-company">Organization</label>
                   <input
+                    id="brief-company"
                     type="text"
                     value={form.company}
                     onChange={(e) => setForm({ ...form, company: e.target.value })}
                     onBlur={() => setTouched({ ...touched, company: true })}
                     style={fieldStyle("company")}
+                    aria-invalid={showError("company")}
+                    aria-describedby={!valid.company ? "brief-company-error" : undefined}
                   />
+                  {!valid.company && <span id="brief-company-error" className={guideClass("company")}>{FIELD_MESSAGES.company}</span>}
                 </div>
               </div>
 
               <div className="cta__field">
-                <label>What do you need?</label>
+                <label htmlFor="brief-service">What do you need?</label>
                 <select
+                  id="brief-service"
                   value={form.service}
                   onChange={(e) => setForm({ ...form, service: e.target.value })}
                   onBlur={() => setTouched({ ...touched, service: true })}
                   style={fieldStyle("service")}
+                  aria-invalid={showError("service")}
+                  aria-describedby={!valid.service ? "brief-service-error" : undefined}
                 >
                   <option value="">Select a service</option>
                   <option>Digital Experience Platform</option>
@@ -188,24 +216,32 @@ export function Cta() {
                   <option>Infrastructure &amp; Security</option>
                   <option>Something else</option>
                 </select>
+                {!valid.service && <span id="brief-service-error" className={guideClass("service")}>{FIELD_MESSAGES.service}</span>}
               </div>
 
               <div className={fieldClass("message")}>
-                <label>Tell us more</label>
+                <label htmlFor="brief-message">Tell us more</label>
                 <textarea
+                  id="brief-message"
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   onBlur={() => setTouched({ ...touched, message: true })}
                   style={fieldStyle("message")}
+                  aria-invalid={showError("message")}
+                  aria-describedby={!valid.message ? "brief-message-error" : undefined}
                 />
+                {!valid.message && <span id="brief-message-error" className={guideClass("message")}>{FIELD_MESSAGES.message}</span>}
               </div>
 
+              {!allValid && Object.keys(touched).length > 0 && (
+                <div className="cta__error">Complete the highlighted fields to send the brief.</div>
+              )}
               {status === "error" && <div className="cta__error">{errMsg}</div>}
 
               <button
                 type="submit"
                 className="cta__submit"
-                disabled={status === "submitting" || (!allValid && Object.keys(touched).length > 0)}
+                disabled={status === "submitting" || !allValid}
               >
                 {status === "submitting" ? (
                   <>

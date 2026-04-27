@@ -4,7 +4,6 @@ import { motion, useMotionValue, useSpring, useReducedMotion } from "motion/reac
 
 export function Cursor() {
   const reduce = useReducedMotion();
-  const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
@@ -13,10 +12,6 @@ export function Cursor() {
   const size = useSpring(hovering ? 36 : 10, { stiffness: 300, damping: 22 });
 
   useEffect(() => {
-    if (reduce) return;
-    if (window.matchMedia("(hover: none)").matches) return;
-    setEnabled(true);
-
     const onMove = (e: MouseEvent) => {
       x.set(e.clientX);
       y.set(e.clientY);
@@ -26,7 +21,7 @@ export function Cursor() {
       );
       setHovering(interactive);
     };
-    window.addEventListener("mousemove", onMove);
+    if (!reduce) window.addEventListener("mousemove", onMove);
     return () => window.removeEventListener("mousemove", onMove);
   }, [reduce, x, y]);
 
@@ -34,9 +29,10 @@ export function Cursor() {
     size.set(hovering ? 36 : 10);
   }, [hovering, size]);
 
-  if (!enabled) return null;
+  if (reduce) return null;
   return (
     <motion.div
+      className="cursor-orb"
       aria-hidden
       style={{
         position: "fixed",

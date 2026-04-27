@@ -18,11 +18,7 @@ function Counter({ to, suffix = "", duration = 1.6 }: { to: number; suffix?: str
   const reduce = useReducedMotion();
 
   useEffect(() => {
-    if (!inView) return;
-    if (reduce) {
-      setVal(to);
-      return;
-    }
+    if (!inView || reduce) return;
     const controls = animate(0, to, {
       duration,
       ease: [0.22, 1, 0.36, 1],
@@ -33,7 +29,7 @@ function Counter({ to, suffix = "", duration = 1.6 }: { to: number; suffix?: str
 
   return (
     <span ref={ref}>
-      {val}
+      {reduce ? to : val}
       {suffix}
     </span>
   );

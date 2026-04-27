@@ -1,0 +1,563 @@
+- generic [active] [ref=e1]:
+  - navigation "Section navigation" [ref=e748]:
+    - list [ref=e749]:
+      - listitem [ref=e750]:
+        - link "Top" [ref=e751] [cursor=pointer]:
+          - /url: "#top"
+          - generic: Top
+      - listitem [ref=e752]:
+        - link "About" [ref=e753] [cursor=pointer]:
+          - /url: "#about"
+          - generic: About
+      - listitem [ref=e754]:
+        - link "Services" [ref=e755] [cursor=pointer]:
+          - /url: "#services"
+          - generic: Services
+      - listitem [ref=e756]:
+        - link "Leadership" [ref=e757] [cursor=pointer]:
+          - /url: "#leadership"
+          - generic: Leadership
+      - listitem [ref=e758]:
+        - link "Projects" [ref=e759] [cursor=pointer]:
+          - /url: "#projects"
+          - generic: Projects
+      - listitem [ref=e760]:
+        - link "Clients" [ref=e761] [cursor=pointer]:
+          - /url: "#testimonials"
+          - generic: Clients
+      - listitem [ref=e762]:
+        - link "Roadmap" [ref=e763] [cursor=pointer]:
+          - /url: "#strategy"
+          - generic: Roadmap
+      - listitem [ref=e764]:
+        - link "Partners" [ref=e765] [cursor=pointer]:
+          - /url: "#brands"
+          - generic: Partners
+      - listitem [ref=e766]:
+        - link "FAQ" [ref=e767] [cursor=pointer]:
+          - /url: "#faq"
+          - generic: FAQ
+      - listitem [ref=e768]:
+        - link "Contact" [ref=e769] [cursor=pointer]:
+          - /url: "#contact"
+          - generic: Contact
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "Osimah Digital" [ref=e4] [cursor=pointer]:
+        - /url: "#top"
+        - img "Osimah Digital" [ref=e5]
+      - generic [ref=e770]:
+        - link "About" [ref=e771] [cursor=pointer]:
+          - /url: "#about"
+        - link "Services" [ref=e772] [cursor=pointer]:
+          - /url: "#services"
+        - link "Leadership" [ref=e773] [cursor=pointer]:
+          - /url: "#leadership"
+        - link "Projects" [ref=e774] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Roadmap" [ref=e775] [cursor=pointer]:
+          - /url: "#strategy"
+        - link "Partners" [ref=e776] [cursor=pointer]:
+          - /url: "#brands"
+        - link "Contact" [ref=e777] [cursor=pointer]:
+          - /url: "#contact"
+      - link "Start a project" [ref=e7] [cursor=pointer]:
+        - /url: "#contact"
+        - text: Start a project
+        - img [ref=e8]
+  - main [ref=e10]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: A Saudi Technology House · Est. 2017
+      - heading "Enabling the Kingdom’s digital future." [level=1] [ref=e16]:
+        - generic [ref=e17]:
+          - generic [ref=e19]: Enabling
+          - generic [ref=e21]: the
+        - emphasis [ref=e25]: Kingdom’s
+        - generic [ref=e26]:
+          - generic [ref=e28]: digital
+          - generic [ref=e30]: future.
+      - paragraph [ref=e31]: Osimah Digital builds end-to-end digital experiences for Saudi Arabia’s ministries, giga-projects and leading enterprises — uniting global platforms, regional expertise, and a family of brands under one trusted house.
+      - generic [ref=e32]:
+        - link "Start a project" [ref=e33] [cursor=pointer]:
+          - /url: "#contact"
+          - text: Start a project
+          - img [ref=e34]
+        - link "See our work" [ref=e36] [cursor=pointer]:
+          - /url: "#projects"
+    - generic [ref=e40]:
+      - generic [ref=e41]:
+        - text: Trusted by the
+        - text: Kingdom’s leaders
+      - generic [ref=e43]:
+        - generic [ref=e44]: Red Sea Global
+        - generic [ref=e45]: NEOM
+        - generic [ref=e46]: Ministry of Transport
+        - generic [ref=e47]: REGA
+        - generic [ref=e48]: Invest Saudi
+        - generic [ref=e49]: G20
+        - generic [ref=e50]: KAPSARC
+        - generic [ref=e51]: Royal Commission for AlUla
+        - generic [ref=e52]: Ministry of Justice
+        - generic [ref=e53]: Ministry of Finance
+        - generic [ref=e54]: KACST
+        - generic [ref=e55]: Taqnia Space
+        - generic [ref=e56]: Visit Red Sea
+        - generic [ref=e57]: Jeddah Dev. Authority
+        - generic [ref=e58]: SIDF
+        - generic [ref=e59]: Hevolution
+        - generic [ref=e60]: MBS City
+        - generic [ref=e61]: STC Solutions
+        - generic [ref=e62]: Red Sea Global
+        - generic [ref=e63]: NEOM
+        - generic [ref=e64]: Ministry of Transport
+        - generic [ref=e65]: REGA
+        - generic [ref=e66]: Invest Saudi
+        - generic [ref=e67]: G20
+        - generic [ref=e68]: KAPSARC
+        - generic [ref=e69]: Royal Commission for AlUla
+        - generic [ref=e70]: Ministry of Justice
+        - generic [ref=e71]: Ministry of Finance
+        - generic [ref=e72]: KACST
+        - generic [ref=e73]: Taqnia Space
+        - generic [ref=e74]: Visit Red Sea
+        - generic [ref=e75]: Jeddah Dev. Authority
+        - generic [ref=e76]: SIDF
+        - generic [ref=e77]: Hevolution
+        - generic [ref=e78]: MBS City
+        - generic [ref=e79]: STC Solutions
+    - generic [ref=e81]:
+      - generic [ref=e83]:
+        - generic [ref=e84]:
+          - generic [ref=e85]: — 01 / Services
+          - generic [ref=e86]: ·What we do
+        - generic [ref=e87]:
+          - heading "A full-stack digital house for the Kingdom." [level=2] [ref=e88]:
+            - text: A full-stack
+            - emphasis [ref=e89]: digital house
+            - text: for the Kingdom.
+          - paragraph [ref=e90]: Four disciplines, one delivery team. From research and design to integrations, security and round-the-clock operations.
+      - tablist [ref=e91]:
+        - tab "Digital Experience" [ref=e92] [cursor=pointer]
+        - tab "Design & UX" [ref=e94] [cursor=pointer]
+        - tab "Engineering" [ref=e95] [cursor=pointer]
+        - tab "Infrastructure & Security" [selected] [ref=e96] [cursor=pointer]: Infrastructure & Security
+      - generic [ref=e779]:
+        - generic [ref=e780]:
+          - heading "Server configuration, security, and deployment — owned end to end." [level=3] [ref=e781]
+          - paragraph [ref=e782]: From cloud architecture to hardening, we run the infrastructure behind the experiences we build. Saudi-resident where it must be, global where it can be.
+          - paragraph [ref=e783]: Continuous delivery and observability are table stakes. Sovereign data residency is not negotiable.
+          - generic [ref=e784]:
+            - generic [ref=e785]:
+              - generic [ref=e786]: NCA
+              - generic [ref=e787]: Compliant
+            - generic [ref=e788]:
+              - generic [ref=e789]: 99.9%
+              - generic [ref=e790]: Target uptime
+            - generic [ref=e791]:
+              - generic [ref=e792]: KSA
+              - generic [ref=e793]: Data residency
+        - generic [ref=e794]:
+          - generic [ref=e795]:
+            - generic [ref=e796]: "01"
+            - generic [ref=e797]:
+              - generic [ref=e798]: Cloud architecture
+              - generic [ref=e799]: Azure, AWS, private cloud — KSA data residency.
+            - img [ref=e801]
+          - generic [ref=e803]:
+            - generic [ref=e804]: "02"
+            - generic [ref=e805]:
+              - generic [ref=e806]: Security & compliance
+              - generic [ref=e807]: NCA, SAMA, DGA aligned from kickoff.
+            - img [ref=e809]
+          - generic [ref=e811]:
+            - generic [ref=e812]: "03"
+            - generic [ref=e813]:
+              - generic [ref=e814]: DevOps
+              - generic [ref=e815]: CI/CD, IaC, monitoring, runbooks.
+            - img [ref=e817]
+          - generic [ref=e819]:
+            - generic [ref=e820]: "04"
+            - generic [ref=e821]:
+              - generic [ref=e822]: Managed ops
+              - generic [ref=e823]: 24/7 NOC and L1–L3 support.
+            - img [ref=e825]
+    - region "Key numbers" [ref=e145]:
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - generic [ref=e150]: 40+
+          - generic [ref=e151]: Entities served
+        - generic [ref=e152]:
+          - generic [ref=e154]: 12 yrs
+          - generic [ref=e155]: Operating in KSA
+        - generic [ref=e156]:
+          - generic [ref=e158]: 200+
+          - generic [ref=e159]: Specialists across the house
+        - generic [ref=e160]:
+          - generic [ref=e161]: "9"
+          - generic [ref=e162]: Sectors covered
+    - generic [ref=e164]:
+      - generic [ref=e166]:
+        - generic [ref=e167]:
+          - generic [ref=e168]: — 02 / Leadership
+          - generic [ref=e169]: ·The people behind the work
+        - generic [ref=e170]:
+          - heading "Built by operators with two decades in the region." [level=2] [ref=e171]:
+            - text: Built by operators with
+            - emphasis [ref=e172]: two decades
+            - text: in the region.
+          - paragraph [ref=e173]: We take the house personally. Our leadership sits in every major engagement — from first brief to go-live.
+      - generic [ref=e174]:
+        - generic [ref=e176]:
+          - img "Chairman" [ref=e178]
+          - generic [ref=e179]:
+            - generic [ref=e180]: Chairman
+            - generic [ref=e181]:
+              - text: Abdullah
+              - emphasis [ref=e182]: Al-Sharqi
+            - generic [ref=e183]: Sets the strategic direction of Osimah Digital and its family of brands across the Kingdom — championing Saudi-led digital transformation aligned to Vision 2030.
+            - generic: “We measure ourselves in mandates kept, not headlines won.”
+            - link "View profile" [ref=e184] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e185]
+              - text: View profile
+        - generic [ref=e188]:
+          - img "Rajai Abu Alata — CEO" [ref=e190]
+          - generic [ref=e191]:
+            - generic [ref=e192]: Chief Executive Officer
+            - generic [ref=e193]:
+              - text: Rajai
+              - emphasis [ref=e194]: Abu Alata
+            - generic [ref=e195]: 24 years in IT & Telecom. Leads operations, business strategy and partner brands across Saudi Arabia — making sure every Osimah engagement hits the targets that matter to its clients.
+            - generic: “Delivery is a promise. We keep it on day one and on day one thousand.”
+            - link "View profile" [ref=e196] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/rajai-abu-alata-ba168020/
+              - img [ref=e197]
+              - text: View profile
+    - generic [ref=e568]:
+      - generic [ref=e570]:
+        - generic [ref=e571]: Selected work · Portfolio
+        - heading "Work we’re proud to put our name on." [level=2] [ref=e572]:
+          - text: Work we’re
+          - emphasis [ref=e573]: proud
+          - text: to put our name on.
+        - paragraph [ref=e574]: Ministries, giga-projects and enterprise programs — delivered with global platforms and regional teams.
+        - tablist [ref=e575]:
+          - button "All projects" [pressed] [ref=e576] [cursor=pointer]: All projects
+          - button "Government" [ref=e578] [cursor=pointer]
+          - button "Giga-projects" [ref=e579] [cursor=pointer]
+          - button "Enterprise" [ref=e580] [cursor=pointer]
+      - generic [ref=e581]:
+        - figure "Giga · Websites NEOM × Red Sea Global" [ref=e582]:
+          - img "NEOM × Red Sea Global" [ref=e584]
+          - generic [ref=e585]:
+            - generic [ref=e586]: Giga · Websites
+            - generic [ref=e587]: NEOM × Red Sea Global
+        - figure "Government · Websites Ministry of Transport × Real Estate General Authority" [ref=e588]:
+          - img "Ministry of Transport × Real Estate General Authority" [ref=e590]
+          - generic [ref=e591]:
+            - generic [ref=e592]: Government · Websites
+            - generic [ref=e593]: Ministry of Transport × Real Estate General Authority
+        - figure "Government · Web Platforms Ministry of Justice × Ministry of Finance" [ref=e594]:
+          - img "Ministry of Justice × Ministry of Finance" [ref=e596]
+          - generic [ref=e597]:
+            - generic [ref=e598]: Government · Web Platforms
+            - generic [ref=e599]: Ministry of Justice × Ministry of Finance
+        - figure "Government · Trademarks Platform Saudi Authority for Intellectual Property" [ref=e600]:
+          - img "Saudi Authority for Intellectual Property" [ref=e602]
+          - generic [ref=e603]:
+            - generic [ref=e604]: Government · Trademarks Platform
+            - generic [ref=e605]: Saudi Authority for Intellectual Property
+        - figure "Enterprise · Research Portals KAPSARC × KAPSARC College" [ref=e606]:
+          - img "KAPSARC × KAPSARC College" [ref=e608]
+          - generic [ref=e609]:
+            - generic [ref=e610]: Enterprise · Research Portals
+            - generic [ref=e611]: KAPSARC × KAPSARC College
+        - figure "Enterprise · Intranets SIDF × Hevolution" [ref=e612]:
+          - img "SIDF × Hevolution" [ref=e614]
+          - generic [ref=e615]:
+            - generic [ref=e616]: Enterprise · Intranets
+            - generic [ref=e617]: SIDF × Hevolution
+        - figure "Enterprise · Mobile App Hayyak by stc" [ref=e618]:
+          - img "Hayyak by stc" [ref=e620]
+          - generic [ref=e621]:
+            - generic [ref=e622]: Enterprise · Mobile App
+            - generic [ref=e623]: Hayyak by stc
+        - figure "Giga · Mobile App Misk City" [ref=e624]:
+          - img "Misk City" [ref=e626]
+          - generic [ref=e627]:
+            - generic [ref=e628]: Giga · Mobile App
+            - generic [ref=e629]: Misk City
+        - figure "Government · Websites Invest Saudi × G20" [ref=e630]:
+          - img "Invest Saudi × G20" [ref=e632]
+          - generic [ref=e633]:
+            - generic [ref=e634]: Government · Websites
+            - generic [ref=e635]: Invest Saudi × G20
+      - button "Show 12 more projects" [ref=e729] [cursor=pointer]
+    - generic [ref=e269]:
+      - generic [ref=e270]:
+        - generic [ref=e271]:
+          - generic [ref=e272]: — 03 / Clients
+          - generic [ref=e273]: ·What our clients say
+        - generic [ref=e274]:
+          - heading "Trusted by the Kingdom’s leaders." [level=2] [ref=e275]:
+            - text: Trusted by the
+            - emphasis [ref=e276]: Kingdom’s
+            - text: leaders.
+          - paragraph [ref=e277]: From ministries to giga-projects — the voices behind the work.
+      - generic [ref=e279]:
+        - img "Red Sea Global" [ref=e827]
+        - generic [ref=e282]:
+          - generic [ref=e283]: “
+          - generic [ref=e828]:
+            - paragraph [ref=e829]: Their Liferay implementation transformed how our employees interact with internal systems. The delivery team understood government compliance from day one.
+            - generic [ref=e830]:
+              - generic [ref=e831]: Red Sea Global
+              - generic [ref=e832]: Giga-project · Employee Super-App
+          - generic [ref=e289]:
+            - generic [ref=e290]:
+              - generic [ref=e291]: "02"
+              - generic [ref=e294]: "05"
+            - generic [ref=e295]:
+              - button "Previous" [ref=e296] [cursor=pointer]:
+                - img [ref=e297]
+              - button "Next" [ref=e299] [cursor=pointer]:
+                - img [ref=e300]
+    - generic [ref=e303]:
+      - generic [ref=e305]:
+        - generic [ref=e306]:
+          - generic [ref=e307]: — 04 / What’s next
+          - generic [ref=e308]: ·Strategic Roadmap
+        - generic [ref=e309]:
+          - heading "Three bets on the Kingdom’s next chapter." [level=2] [ref=e310]:
+            - text: Three bets on the
+            - emphasis [ref=e311]: Kingdom’s
+            - text: next chapter.
+          - paragraph [ref=e312]: Doubling down on the core, opening a dedicated AI entity, and entering the regulated fintech market.
+      - generic [ref=e313]:
+        - article [ref=e315]:
+          - generic [ref=e316]:
+            - generic [ref=e317]: "01"
+            - generic [ref=e318]: Today
+          - generic [ref=e319]: Core business
+          - heading "Osimah Digital" [level=3] [ref=e320]
+          - paragraph [ref=e321]: Scaling the Kingdom’s most trusted digital house — partner-led, ministry-grade delivery.
+          - list [ref=e322]:
+            - listitem [ref=e323]: Deepen Sitecore, Liferay & Adobe practices
+            - listitem [ref=e324]: Expand giga-project footprint
+            - listitem [ref=e325]: Triple delivery capacity by 2026
+          - img [ref=e327]
+        - article [ref=e330]:
+          - generic [ref=e331]:
+            - generic [ref=e332]: "02"
+            - generic [ref=e333]: 2025 — Launching
+          - generic [ref=e334]: New capability
+          - heading "AI Innovation & Digital Transformation" [level=3] [ref=e335]
+          - paragraph [ref=e336]: A dedicated AI entity bringing applied agents, vision and search into government and enterprise platforms.
+          - list [ref=e337]:
+            - listitem [ref=e338]: Vertical AI agents for citizen services
+            - listitem [ref=e339]: Cognitive search & document intelligence
+            - listitem [ref=e340]: MOUs with Squirro and global AI partners
+          - img [ref=e342]
+        - article [ref=e345]:
+          - generic [ref=e346]:
+            - generic [ref=e347]: "03"
+            - generic [ref=e348]: 2026 — Regulated
+          - generic [ref=e349]: New product
+          - heading "Debt Management & Crowdfunding" [level=3] [ref=e350]
+          - paragraph [ref=e351]: Entering Saudi fintech with a SAMA-licensed debt-based crowdfunding platform.
+          - list [ref=e352]:
+            - listitem [ref=e353]: SAMA Regulatory Sandbox in 2025
+            - listitem [ref=e354]: Sharia-compliant product design
+            - listitem [ref=e355]: Targeting the SME finance gap
+          - img [ref=e357]
+    - generic [ref=e360]:
+      - generic [ref=e362]:
+        - generic [ref=e363]:
+          - generic [ref=e364]: — 05 / Partners
+          - generic [ref=e365]: ·One house, many hands
+        - generic [ref=e366]:
+          - heading "A family of partners serving the Kingdom." [level=2] [ref=e367]:
+            - text: A
+            - emphasis [ref=e368]: family of partners
+            - text: serving the Kingdom.
+          - paragraph [ref=e369]: Osimah Digital represents and operates alongside global brands in the Middle East — so our clients get the best of the world, delivered locally.
+      - generic [ref=e370]:
+        - generic [ref=e372]:
+          - generic [ref=e373]:
+            - img "Crafton" [ref=e375]
+            - generic [ref=e376]: UX-driven digital agency — user research, UI/UX, design and digital strategy for regional leaders.
+          - generic [ref=e378]: Agency · KSA
+        - generic [ref=e381]:
+          - generic [ref=e382]:
+            - img "Webtown" [ref=e384]
+            - generic [ref=e385]: Liferay Multinational Platinum Partner — portals, intranets and employee platforms since 2021.
+          - generic [ref=e387]: Liferay Platinum
+        - generic [ref=e390]:
+          - generic [ref=e391]:
+            - img "STX Next" [ref=e393]
+            - generic [ref=e394]: EMEA engineering partner — Python, AI/ML and specialist capacity for complex platforms.
+          - generic [ref=e396]: Engineering Partner
+        - generic [ref=e399]:
+          - generic [ref=e400]:
+            - img "Liferay" [ref=e402]
+            - generic [ref=e403]: Digital experience and portal platform — the backbone of our intranet and employee apps.
+          - generic [ref=e405]: Platform Partner
+        - generic [ref=e408]:
+          - generic [ref=e409]:
+            - img "Sitecore" [ref=e411]
+            - generic [ref=e412]: Composable DXP platform — powering content, personalization and commerce at enterprise scale.
+          - generic [ref=e414]: Platinum Partner
+        - generic [ref=e417]:
+          - generic [ref=e418]:
+            - img "Squirro" [ref=e420]
+            - generic [ref=e421]: Cognitive search and AI insights — augmenting the platforms we deliver with intelligent retrieval.
+          - generic [ref=e423]: AI Partner
+    - generic [ref=e426]:
+      - generic [ref=e427]:
+        - generic [ref=e428]: — 06 / FAQ
+        - generic [ref=e429]: Frequently asked
+        - heading "Answers for serious programs." [level=2] [ref=e430]:
+          - text: Answers for
+          - emphasis [ref=e431]: serious
+          - text: programs.
+        - paragraph [ref=e432]: Still have questions? Our leadership reads every inbound brief.
+        - link "Talk to us" [ref=e433] [cursor=pointer]:
+          - /url: "#contact"
+          - text: Talk to us
+          - img [ref=e434]
+      - generic [ref=e436]:
+        - generic [ref=e437]:
+          - button "What makes Osimah Digital different from other agencies in the Kingdom?" [ref=e438] [cursor=pointer]:
+            - text: What makes Osimah Digital different from other agencies in the Kingdom?
+            - img [ref=e440]
+          - generic [ref=e442]: We're a Saudi technology house, not just an agency. That means we own the full stack — research, design, engineering, infrastructure and 24/7 operations — and we represent multiple global platform partners under one roof. One accountable team, from first brief to production uptime.
+        - generic [ref=e443]:
+          - button "Are you DGA-approved for government engagements?" [ref=e444] [cursor=pointer]:
+            - text: Are you DGA-approved for government engagements?
+            - img [ref=e446]
+          - generic: Yes. Our delivery aligns to the Digital Government Authority's unified design system and compliance requirements. We've shipped DGA-approved platforms for the Ministry of Transport, Ministry of Justice, Ministry of Finance and the Real Estate General Authority.
+        - generic [ref=e448]:
+          - button "Which platforms do you specialize in?" [ref=e449] [cursor=pointer]:
+            - text: Which platforms do you specialize in?
+            - img [ref=e451]
+          - generic: Sitecore, Adobe Experience Cloud, Liferay (Multinational Platinum), Umbraco and SharePoint — covering the DXP, portal and content management needs of ministries and enterprises. We also build on modern composable and headless stacks where they fit.
+        - generic [ref=e453]:
+          - button "Where is your team based?" [ref=e454] [cursor=pointer]:
+            - text: Where is your team based?
+            - img [ref=e456]
+          - generic: Headquartered in Riyadh since 2017. We operate through our family of brands — Crafton Middle East, Interllias, Webtown and Kogifi Saudi — with delivery partners across EMEA for specialist capacity.
+        - generic [ref=e458]:
+          - button "What does a typical engagement look like?" [ref=e459] [cursor=pointer]:
+            - text: What does a typical engagement look like?
+            - img [ref=e461]
+          - generic: Most engagements start with a discovery sprint (2–4 weeks) to align on audience, scope and compliance. From there, we move into iterative design, engineering and integration — shipping to a staging environment every two weeks. Production launch includes hypercare, then we can operate and evolve the platform long-term.
+        - generic [ref=e463]:
+          - button "Do you take on work outside Saudi Arabia?" [ref=e464] [cursor=pointer]:
+            - text: Do you take on work outside Saudi Arabia?
+            - img [ref=e466]
+          - generic: Our focus is the Kingdom and the wider GCC, but we've delivered programs across the Middle East through our regional brands. If the project serves a Saudi audience, we're interested.
+    - generic [ref=e469]:
+      - generic [ref=e470]:
+        - generic [ref=e471]: — 06 / Let’s build
+        - heading "Do you have a big idea we can help with?" [level=2] [ref=e472]:
+          - text: Do you have a
+          - emphasis [ref=e473]: big idea
+          - text: we can help with?
+        - generic [ref=e474]:
+          - generic [ref=e475]: HQ
+          - generic [ref=e476]: Riyadh, Kingdom of Saudi Arabia
+          - generic [ref=e477]: Est.
+          - generic [ref=e478]: 2017 · Registered as a Saudi technology house
+          - generic [ref=e479]: Hours
+          - generic [ref=e480]: Sun–Thu · 9:00–18:00 AST
+          - generic [ref=e481]: Email
+          - link "hello@osimah.com" [ref=e483] [cursor=pointer]:
+            - /url: mailto:hello@osimah.com
+      - generic [ref=e484]:
+        - generic [ref=e485]: Start a project · Confidential
+        - generic [ref=e486]:
+          - generic: Your name
+          - textbox [ref=e487]
+        - generic [ref=e488]:
+          - generic [ref=e489]:
+            - generic: Work email
+            - textbox [ref=e490]
+          - generic [ref=e491]:
+            - generic: Organization
+            - textbox [ref=e492]
+        - generic [ref=e493]:
+          - generic [ref=e494]: What do you need?
+          - combobox [ref=e495]:
+            - option "Select a service" [selected]
+            - option "Digital Experience Platform"
+            - option "Design & UX"
+            - option "Engineering"
+            - option "Infrastructure & Security"
+            - option "Something else"
+        - generic [ref=e496]:
+          - generic: Tell us more
+          - textbox [ref=e497]
+        - button "Start a project" [ref=e498] [cursor=pointer]:
+          - text: Start a project
+          - img [ref=e499]
+  - contentinfo [ref=e501]:
+    - generic [ref=e502]:
+      - generic [ref=e503]:
+        - generic [ref=e504]:
+          - img "Osimah Digital" [ref=e505]
+          - heading "Enabling the Kingdom’s digital future." [level=3] [ref=e506]:
+            - text: Enabling the
+            - emphasis [ref=e507]: Kingdom’s
+            - text: digital future.
+          - paragraph [ref=e508]: A Saudi technology house representing global brands in the Middle East — headquartered in Riyadh since 2017.
+        - generic [ref=e509]:
+          - heading "Services" [level=5] [ref=e510]
+          - list [ref=e511]:
+            - listitem [ref=e512]:
+              - link "Digital Experience" [ref=e513] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e514]:
+              - link "Design & UX" [ref=e515] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e516]:
+              - link "Engineering" [ref=e517] [cursor=pointer]:
+                - /url: "#services"
+            - listitem [ref=e518]:
+              - link "Infrastructure" [ref=e519] [cursor=pointer]:
+                - /url: "#services"
+        - generic [ref=e520]:
+          - heading "Company" [level=5] [ref=e521]
+          - list [ref=e522]:
+            - listitem [ref=e523]:
+              - link "About" [ref=e524] [cursor=pointer]:
+                - /url: "#about"
+            - listitem [ref=e525]:
+              - link "Leadership" [ref=e526] [cursor=pointer]:
+                - /url: "#leadership"
+            - listitem [ref=e527]:
+              - link "Projects" [ref=e528] [cursor=pointer]:
+                - /url: "#projects"
+            - listitem [ref=e529]:
+              - link "Partners" [ref=e530] [cursor=pointer]:
+                - /url: "#brands"
+        - generic [ref=e531]:
+          - heading "Contact" [level=5] [ref=e532]
+          - list [ref=e533]:
+            - listitem [ref=e534]:
+              - link "Start a project" [ref=e535] [cursor=pointer]:
+                - /url: "#contact"
+            - listitem [ref=e536]:
+              - link "hello@osimah.sa" [ref=e537] [cursor=pointer]:
+                - /url: mailto:hello@osimah.sa
+            - listitem [ref=e538]:
+              - link "osimah.sa" [ref=e539] [cursor=pointer]:
+                - /url: https://osimah.sa
+            - listitem [ref=e540]:
+              - link "LinkedIn" [ref=e541] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e542]:
+        - generic [ref=e543]: © 2026 OSIMAH DIGITAL · ALL RIGHTS RESERVED
+        - generic [ref=e544]: RIYADH · KSA
+  - button "Open Next.js Dev Tools" [ref=e550] [cursor=pointer]:
+    - img [ref=e551]
+  - alert [ref=e554]
