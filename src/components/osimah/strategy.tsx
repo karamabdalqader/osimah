@@ -59,7 +59,7 @@ export function Strategy() {
         <Reveal>
           <div className="section-head">
             <div className="section-head__kicker">
-              <div className="section-head__num">— 04 / What&rsquo;s next</div>
+              <div className="section-head__num">&mdash; 05 / What&rsquo;s next</div>
               <div className="eyebrow">Strategic Roadmap</div>
             </div>
             <div>

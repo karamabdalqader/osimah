@@ -60,7 +60,7 @@ export default function Home() {
           <div className="shell">
             <div className="section-head">
               <div className="section-head__kicker">
-                <div className="section-head__num">— 03 / Clients</div>
+                <div className="section-head__num">&mdash; 04 / Clients</div>
                 <div className="eyebrow">What our clients say</div>
               </div>
               <div>

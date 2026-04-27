@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
 
@@ -45,22 +45,29 @@ export function Projects() {
   );
   const visible = expanded ? list : list.slice(0, INITIAL_COUNT);
   const hidden = list.length - visible.length;
-  useEffect(() => {
+  const changeFilter = (nextFilter: string) => {
+    setFilter(nextFilter);
     setExpanded(false);
-  }, [filter]);
+  };
+
   return (
     <section id="projects">
       <div className="shell">
         <Reveal>
-          <div className="projects__head">
-            <div className="eyebrow">Selected work · Portfolio</div>
-            <h2 className="projects__title serif">
-              Work we&rsquo;re <em>proud</em> to put our name on.
-            </h2>
-            <p className="projects__lede">
-              Ministries, giga-projects and enterprise programs — delivered with global platforms and
-              regional teams.
-            </p>
+          <div className="projects__head section-head">
+            <div className="section-head__kicker">
+              <div className="section-head__num">&mdash; 03 / Projects</div>
+              <div className="eyebrow">Selected work · Portfolio</div>
+            </div>
+            <div>
+              <h2 className="section-head__title serif">
+                Work we&rsquo;re <em>proud</em> to put our name on.
+              </h2>
+              <p className="section-head__lede">
+                Ministries, giga-projects and enterprise programs — delivered with global platforms and
+                regional teams.
+              </p>
+            </div>
 
             <div className="projects__filters" role="tablist">
               {FILTERS.map((f) => {
@@ -68,7 +75,7 @@ export function Projects() {
                 return (
                   <button
                     key={f.id}
-                    onClick={() => setFilter(f.id)}
+                    onClick={() => changeFilter(f.id)}
                     className={"filter-chip " + (isActive ? "is-active" : "")}
                     aria-pressed={isActive}
                     style={{

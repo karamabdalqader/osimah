@@ -35,7 +35,7 @@ export function Faq() {
     <section id="faq">
       <div className="shell faq__grid">
         <Reveal>
-          <div className="section-head__num">— 06 / FAQ</div>
+          <div className="section-head__num">&mdash; 07 / FAQ</div>
           <div className="eyebrow mt-2">Frequently asked</div>
           <h2
             className="serif mt-4"

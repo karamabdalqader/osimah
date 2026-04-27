@@ -5,6 +5,7 @@ const ITEMS = [
   { href: "#services", label: "Services" },
   { href: "#leadership", label: "Leadership" },
   { href: "#projects", label: "Projects" },
+  { href: "#testimonials", label: "Clients" },
   { href: "#strategy", label: "Roadmap" },
   { href: "#brands", label: "Partners" },
   { href: "#contact", label: "Contact" },

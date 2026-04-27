@@ -30,7 +30,7 @@ export function Brands() {
         <Reveal>
           <div className="section-head">
             <div className="section-head__kicker">
-              <div className="section-head__num">— 05 / Partners</div>
+              <div className="section-head__num">&mdash; 06 / Partners</div>
               <div className="eyebrow">One house, many hands</div>
             </div>
             <div>
