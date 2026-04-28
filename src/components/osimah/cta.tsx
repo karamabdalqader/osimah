@@ -146,11 +146,7 @@ export function Cta() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <div className="cta__form-title">Start a project · Confidential</div>
-
-              <p className="cta__hint">
-                If the secure form endpoint is unavailable, this opens a prepared email to {FALLBACK_EMAIL}.
-              </p>
+              <div className="cta__form-title">Start a project</div>
 
               <div className={fieldClass("name")}>
                 <label htmlFor="brief-name">Your name</label>

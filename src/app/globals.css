@@ -534,30 +534,30 @@ section { padding: 120px 0; }
 .cta__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .cta h2 { color: var(--paper); font-size: clamp(2.5rem, 5.5vw, 5rem); line-height: 0.98; }
 .cta h2 em { color: var(--teal); }
-.cta__form { background: #1C1F24; border: 1px solid #2A2D33; border-radius: 8px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
-.cta__form-title { font-family: var(--font-mono); font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: #8A8E98; }
+.cta__form { background: #1C1F24; border: 1px solid #2A2D33; border-radius: 8px; padding: 32px; display: flex; flex-direction: column; gap: 20px; }
+.cta__form-title { font-family: var(--font-mono); font-size: 13px; text-transform: uppercase; letter-spacing: 0.16em; color: #B5BAC4; }
 .cta__hint {
   color: #A5AAB4;
   font-size: 12px;
   line-height: 1.5;
   margin-top: -6px;
 }
-.cta__field { display: flex; flex-direction: column; gap: 6px; }
-.cta__field label { font-size: 11px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; color: #8A8E98; }
+.cta__field { display: flex; flex-direction: column; gap: 8px; }
+.cta__field label { font-size: 13px; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.14em; color: #B5BAC4; }
 .cta__field input, .cta__field textarea, .cta__field select {
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #2A2D33;
-  padding: 10px 0;
+  border-bottom: 1px solid #3A3D43;
+  padding: 12px 0;
   color: var(--paper);
   font-family: var(--font-sans);
-  font-size: 15px;
+  font-size: 17px;
   outline: none;
   transition: border-color 0.2s;
 }
 .cta__field input:focus, .cta__field textarea:focus, .cta__field select:focus { border-bottom-color: var(--teal); }
 .cta__field select option { background: #1C1F24; color: var(--paper); }
-.cta__field textarea { min-height: 64px; resize: vertical; }
+.cta__field textarea { min-height: 96px; resize: vertical; }
 .cta__submit {
   margin-top: 8px;
   background: var(--teal);
@@ -743,8 +743,10 @@ section { padding: 120px 0; }
   .cta { padding: 32px 0 56px; }
   .cta__grid { gap: 36px; }
   .cta__row { grid-template-columns: 1fr; gap: 12px; }
-  .cta__form { padding: 20px; gap: 14px; }
-  .cta__form-title { font-size: 10px; }
+  .cta__form { padding: 24px; gap: 16px; }
+  .cta__form-title { font-size: 12px; }
+  .cta__field input, .cta__field textarea, .cta__field select { font-size: 16px; padding: 11px 0; }
+  .cta__field label { font-size: 12px; }
 
   /* Nav: tighten the bar, hide the desktop CTA in favor of the burger */
   .nav { padding: 10px 0; }
