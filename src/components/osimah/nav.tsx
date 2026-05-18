@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { asset } from "@/lib/asset";
 
 const ITEMS = [
   { href: "#services", label: "Services" },
@@ -54,7 +55,7 @@ export function Nav() {
       <div className="shell nav__inner">
         <a href="#top" className="nav__logo" onClick={() => setOpen(false)}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.PNG" alt="Osimah Digital" />
+          <img src={asset("/logo.PNG")} alt="Osimah Digital" />
         </a>
         <div className="nav__links">
           {ITEMS.map((i) => (

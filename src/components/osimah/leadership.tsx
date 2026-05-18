@@ -2,6 +2,7 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
+import { asset } from "@/lib/asset";
 
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -68,7 +69,7 @@ export function Leadership() {
             <TiltLeader>
               <div className="leader__photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="leader__img" src="/chairman.PNG" alt="Chairman" />
+                <img className="leader__img" src={asset("/chairman.PNG")} alt="Chairman" />
               </div>
               <div className="leader__body">
                 <div className="leader__role">Chairman</div>
@@ -99,7 +100,7 @@ export function Leadership() {
             <TiltLeader>
               <div className="leader__photo">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="leader__img" src="/CEO 1.png" alt="Rajai Abu Alata — CEO" />
+                <img className="leader__img" src={asset("/CEO 1.png")} alt="Rajai Abu Alata — CEO" />
               </div>
               <div className="leader__body">
                 <div className="leader__role">Chief Executive Officer</div>

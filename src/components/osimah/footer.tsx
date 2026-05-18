@@ -1,3 +1,5 @@
+import { asset } from "@/lib/asset";
+
 export function Footer() {
   return (
     <footer className="footer">
@@ -5,7 +7,7 @@ export function Footer() {
         <div className="footer__top">
           <div className="footer__brand">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.PNG" alt="Osimah Digital" style={{ height: 36, marginBottom: 24 }} />
+            <img src={asset("/logo.PNG")} alt="Osimah Digital" style={{ height: 36, marginBottom: 24 }} />
             <h3 className="serif">
               Enabling the <em>Kingdom&rsquo;s</em> digital future.
             </h3>

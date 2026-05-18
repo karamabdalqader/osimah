@@ -1,5 +1,6 @@
 "use client";
 import { Reveal, RevealStagger, RevealItem } from "@/components/osimah/reveal";
+import { asset } from "@/lib/asset";
 
 type Partner = {
   name: string;
@@ -20,7 +21,7 @@ const PARTNERS: Partner[] = [
 
 function Logo({ b }: { b: Partner }) {
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={b.src} alt={b.alt} className="brand__logo-img" />;
+  return <img src={asset(b.src)} alt={b.alt} className="brand__logo-img" />;
 }
 
 function relationFor(name: string) {
