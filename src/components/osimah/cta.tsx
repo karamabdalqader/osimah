@@ -7,7 +7,8 @@ type Form = { name: string; email: string; company: string; service: string; mes
 type FieldKey = keyof Form;
 type Status = "idle" | "submitting" | "success" | "error";
 
-const FORM_ENDPOINT = process.env.NEXT_PUBLIC_FORM_ENDPOINT || "";
+const FORM_ENDPOINT =
+  process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://formspree.io/f/mzdwbkew";
 const FALLBACK_EMAIL = "hello@osimah.com";
 const FIELD_MESSAGES: Record<FieldKey, string> = {
   name: "Use at least 2 characters.",
@@ -45,7 +46,11 @@ export function Cta() {
         const res = await fetch(FORM_ENDPOINT, {
           method: "POST",
           headers: { "Content-Type": "application/json", Accept: "application/json" },
-          body: JSON.stringify(form),
+          body: JSON.stringify({
+          ...form,
+          _subject: "New project inquiry — Osimah Digital",
+          _gotcha: "",
+        }),
         });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         setStatus("success");
@@ -132,7 +137,7 @@ export function Cta() {
                   />
                 </svg>
               </motion.div>
-              <h4 className="serif">Brief received.</h4>
+              <h4 className="serif">Email received.</h4>
               <p>Thanks {form.name.split(" ")[0]} — we&rsquo;ll be in touch within two business days.</p>
             </motion.div>
           ) : (
