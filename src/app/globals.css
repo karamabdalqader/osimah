@@ -701,9 +701,17 @@ section { padding: 120px 0; }
   .services__stat-l { font-size: 9px; letter-spacing: 0.12em; }
   .stats__grid { grid-template-columns: 1fr 1fr; gap: 18px 20px; }
   .stats__cell { padding-left: 16px; }
-  section { padding: 56px 0; }
-  .partners + section { padding-top: 56px; }
+  section { padding: 48px 0; }
+  .partners + section { padding-top: 48px; }
+  .testimonials { padding: 48px 0; background: var(--paper-soft); }
+  .stats { padding: 40px 0; }
+  .section-head { margin-bottom: 32px; }
+  .testimonials .section-head { margin-bottom: 32px; }
+  .projects__head { margin-bottom: 32px; }
   .section-head__title { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .ct2__controls { margin-top: 20px; }
+  .ct2__progress-bar { width: 80px; }
+  .ct2__drag-hint { opacity: 0.9; transform: none; font-size: 9.5px; padding: 6px 10px; }
   .pillar { min-height: 0; padding: 24px 22px; }
   .pillar__title { font-size: 20px; }
   .pillar__top { margin-bottom: 20px; }
