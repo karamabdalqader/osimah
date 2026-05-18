@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
+import { useOverflowX } from "@/lib/use-overflow-x";
 
 const TABS = [
   {
@@ -82,6 +83,7 @@ const TABS = [
 
 export function Services() {
   const [active, setActive] = useState("digital");
+  const tabsRef = useOverflowX<HTMLDivElement>();
   const tab = TABS.find((t) => t.id === active)!;
   const changeByOffset = (offset: number) => {
     const index = TABS.findIndex((t) => t.id === active);
@@ -112,7 +114,7 @@ export function Services() {
           </div>
         </Reveal>
 
-        <div className="services__tabs" role="tablist">
+        <div className="services__tabs" role="tablist" ref={tabsRef}>
           {TABS.map((t) => {
             const isActive = active === t.id;
             return (

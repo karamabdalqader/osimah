@@ -55,7 +55,8 @@
       "Bash(wmic process *)",
       "Bash(taskkill //F //PID 13076)",
       "Bash(git pull *)",
-      "Bash(git remote *)"
+      "Bash(git remote *)",
+      "Bash(git -c http.sslVerify=false push origin HEAD:master)"
     ]
   }
 }

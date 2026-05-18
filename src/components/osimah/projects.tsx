@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
+import { useOverflowX } from "@/lib/use-overflow-x";
 
 type Project = {
   id: string;
@@ -75,6 +76,7 @@ export function Projects() {
   );
   const visible = expanded ? list : list.slice(0, INITIAL_COUNT);
   const hidden = list.length - visible.length;
+  const filtersRef = useOverflowX<HTMLDivElement>();
   const changeFilter = (nextFilter: string) => {
     setFilter(nextFilter);
     setExpanded(false);
@@ -112,7 +114,7 @@ export function Projects() {
               </p>
             </div>
 
-            <div className="projects__filters" role="tablist">
+            <div className="projects__filters" role="tablist" ref={filtersRef}>
               {FILTERS.map((f) => {
                 const isActive = filter === f.id;
                 return (
