@@ -2,6 +2,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
+import { asset } from "@/lib/asset";
 
 type Project = {
   id: string;
@@ -161,7 +162,7 @@ export function Projects() {
                   aria-label={`Open case study for ${p.name}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.image} alt={p.name} />
+                  <img src={asset(p.image)} alt={p.name} />
                   <span className="project__open">
                     View case study
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -217,7 +218,7 @@ export function Projects() {
                 </button>
                 <div className="case-modal__media">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={selected.image} alt="" />
+                  <img src={asset(selected.image)} alt="" />
                 </div>
                 <div className="case-modal__body">
                   <div className="project__tag">{selected.tag}</div>

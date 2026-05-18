@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Marquee } from "@/components/ui/marquee";
 import { cn } from "@/lib/utils";
+import { asset } from "@/lib/asset";
 
 export interface TestimonialCardProps
     extends React.HTMLAttributes<HTMLDivElement> {
@@ -34,7 +35,7 @@ export const TestimonialCard = ({
         </div>
 
         <div className="flex w-full select-none items-center justify-start gap-3.5">
-            <img src={img} alt={name} className="size-10 rounded-full" />
+            <img src={img ? asset(img) : undefined} alt={name} className="size-10 rounded-full" />
 
             <div>
                 <p className="font-medium text-foreground">{name}</p>
