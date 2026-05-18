@@ -18,7 +18,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; padding: 0; }
+html, body { margin: 0; padding: 0; overflow-x: clip; }
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -765,7 +765,7 @@ section { padding: 120px 0; }
   .nav__cta-btn { display: none; }
 
   /* Hero: ring sits behind the headline so the title reads "inside" the circle */
-  .hero { padding: 24px 0 32px; overflow: visible; }
+  .hero { padding: 24px 0 32px; overflow: hidden; }
   .hero__grid { grid-template-columns: 1fr; gap: 0; padding-bottom: 0; position: relative; }
   .hero__grid > div:first-child { position: relative; z-index: 2; }
   .hero__visual {
