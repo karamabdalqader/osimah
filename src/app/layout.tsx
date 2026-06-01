@@ -10,6 +10,7 @@ const fraunces = Fraunces({
   subsets: ["latin"],
   axes: ["SOFT", "WONK", "opsz"],
   display: "swap",
+  preload: false,
 });
 
 const inter = Inter({
