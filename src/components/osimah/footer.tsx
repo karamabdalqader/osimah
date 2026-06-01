@@ -1,11 +1,19 @@
+import { OptimizedImage } from "@/components/osimah/optimized-image";
+
 export function Footer() {
   return (
     <footer className="footer">
       <div className="shell">
         <div className="footer__top">
           <div className="footer__brand">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.PNG" alt="Osimah Digital" style={{ height: 36, marginBottom: 24 }} />
+            <OptimizedImage
+              src="/logo.PNG"
+              alt="Osimah Digital"
+              sizes="96px"
+              loading="lazy"
+              decoding="async"
+              style={{ height: 36, width: "auto", marginBottom: 24 }}
+            />
             <h3 className="serif">
               Enabling the <em>Kingdom&rsquo;s</em> digital future.
             </h3>
@@ -16,7 +24,7 @@ export function Footer() {
           </div>
 
           <div className="footer__col">
-            <h5>Services</h5>
+            <h4>Services</h4>
             <ul>
               <li><a href="#services">Digital Experience</a></li>
               <li><a href="#services">Design &amp; UX</a></li>
@@ -26,7 +34,7 @@ export function Footer() {
           </div>
 
           <div className="footer__col">
-            <h5>Company</h5>
+            <h4>Company</h4>
             <ul>
               <li><a href="#about">About</a></li>
               <li><a href="#leadership">Leadership</a></li>
@@ -36,7 +44,7 @@ export function Footer() {
           </div>
 
           <div className="footer__col">
-            <h5>Contact</h5>
+            <h4>Contact</h4>
             <ul>
               <li><a href="#contact">Start a project</a></li>
               <li><a href="mailto:hello@osimah.sa">hello@osimah.sa</a></li>

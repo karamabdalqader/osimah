@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { OptimizedImage } from "@/components/osimah/optimized-image";
 
 const ITEMS = [
   { href: "#services", label: "Services" },
@@ -53,8 +54,13 @@ export function Nav() {
     <nav className={"nav " + (scrolled ? "is-scrolled" : "") + (open ? " is-open" : "")}>
       <div className="shell nav__inner">
         <a href="#top" className="nav__logo" onClick={() => setOpen(false)}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.PNG" alt="Osimah Digital" />
+          <OptimizedImage
+            src="/logo.PNG"
+            alt="Osimah Digital"
+            sizes="96px"
+            loading="eager"
+            decoding="async"
+          />
         </a>
         <div className="nav__links">
           {ITEMS.map((i) => (

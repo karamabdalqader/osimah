@@ -2,6 +2,7 @@
 import { useRef, type ReactNode } from "react";
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
+import { OptimizedImage } from "@/components/osimah/optimized-image";
 
 const LinkedInIcon = () => (
   <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
@@ -67,8 +68,12 @@ export function Leadership() {
           <Reveal delay={0.05}>
             <TiltLeader>
               <div className="leader__photo">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="leader__img" src="/chairman.PNG" alt="Chairman" />
+                <OptimizedImage
+                  className="leader__img"
+                  src="/chairman.png"
+                  alt="Chairman"
+                  sizes="(max-width: 960px) calc(100vw - 48px), 560px"
+                />
               </div>
               <div className="leader__body">
                 <div className="leader__role">Chairman</div>
@@ -98,8 +103,12 @@ export function Leadership() {
           <Reveal delay={0.15}>
             <TiltLeader>
               <div className="leader__photo">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className="leader__img" src="/CEO 1.png" alt="Rajai Abu Alata — CEO" />
+                <OptimizedImage
+                  className="leader__img"
+                  src="/CEO 1.png"
+                  alt="Rajai Abu Alata — CEO"
+                  sizes="(max-width: 960px) calc(100vw - 48px), 560px"
+                />
               </div>
               <div className="leader__body">
                 <div className="leader__role">Chief Executive Officer</div>

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Reveal } from "@/components/osimah/reveal";
 import { useOverflowX } from "@/lib/use-overflow-x";
+import { OptimizedImage } from "@/components/osimah/optimized-image";
 
 type Project = {
   id: string;
@@ -37,6 +38,7 @@ const PROJECTS: Project[] = [
 ];
 
 const INITIAL_COUNT = 9;
+const PROJECT_IMAGE_SIZES = "(max-width: 960px) calc(100vw - 48px), 584px";
 
 const FILTERS = [
   { id: "all", label: "All projects" },
@@ -114,12 +116,13 @@ export function Projects() {
               </p>
             </div>
 
-            <div className="projects__filters" role="tablist" ref={filtersRef}>
+            <div className="projects__filters" aria-label="Project filters" ref={filtersRef}>
               {FILTERS.map((f) => {
                 const isActive = filter === f.id;
                 return (
                   <button
                     key={f.id}
+                    type="button"
                     onClick={() => changeFilter(f.id)}
                     className={"filter-chip " + (isActive ? "is-active" : "")}
                     aria-pressed={isActive}
@@ -160,10 +163,14 @@ export function Projects() {
                   type="button"
                   className="project__frame"
                   onClick={() => setSelected(p)}
-                  aria-label={`Open case study for ${p.name}`}
+                  aria-label={`View case study for ${p.name}`}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={p.image} alt={p.name} />
+                  <OptimizedImage
+                    src={p.image}
+                    alt={p.name}
+                    sizes={PROJECT_IMAGE_SIZES}
+                    className="project__img"
+                  />
                   <span className="project__open">
                     View case study
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -218,8 +225,12 @@ export function Projects() {
                   </svg>
                 </button>
                 <div className="case-modal__media">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={selected.image} alt="" />
+                  <OptimizedImage
+                    src={selected.image}
+                    alt=""
+                    sizes="(max-width: 960px) 100vw, 680px"
+                    loading="eager"
+                  />
                 </div>
                 <div className="case-modal__body">
                   <div className="project__tag">{selected.tag}</div>

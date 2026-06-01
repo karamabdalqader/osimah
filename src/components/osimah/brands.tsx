@@ -18,9 +18,29 @@ const PARTNERS: Partner[] = [
   { name: "Squirro", src: "/P(3).png", alt: "Squirro", desc: "Cognitive search and AI insights — augmenting the platforms we deliver with intelligent retrieval.", tag: "AI Partner" },
 ];
 
+const LOGO_DIMENSIONS: Record<string, { width: number; height: number }> = {
+  Crafton: { width: 200, height: 200 },
+  Webtown: { width: 2000, height: 300 },
+  "STX Next": { width: 1280, height: 618 },
+  Liferay: { width: 500, height: 500 },
+  Sitecore: { width: 920, height: 500 },
+  Squirro: { width: 690, height: 361 },
+};
+
 function Logo({ b }: { b: Partner }) {
-  // eslint-disable-next-line @next/next/no-img-element
-  return <img src={b.src} alt={b.alt} className="brand__logo-img" />;
+  const size = LOGO_DIMENSIONS[b.name];
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={b.src}
+      alt={b.alt}
+      className="brand__logo-img"
+      width={size.width}
+      height={size.height}
+      loading="lazy"
+      decoding="async"
+    />
+  );
 }
 
 function relationFor(name: string) {
