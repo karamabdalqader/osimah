@@ -57,7 +57,7 @@ export function Nav() {
           <OptimizedImage
             src="/logo.PNG"
             alt="Osimah Digital"
-            sizes="96px"
+            sizes="(max-width: 600px) 110px, (max-width: 960px) 130px, 160px"
             loading="eager"
             decoding="async"
           />
