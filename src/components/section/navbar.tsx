@@ -376,7 +376,7 @@ export function Navbar() {
           href="/"
           className="flex items-center gap-2.5 text-lg font-semibold"
         >
-          <Image src="/osimah.PNG" alt="Osimah Digital" width={128} height={32} className="h-8 w-auto object-contain" />
+          <Image src="/optimized/logo-480.webp" alt="Osimah Digital" width={180} height={49} className="h-9 w-auto object-contain" />
         </Link>
 
         <DesktopNav />

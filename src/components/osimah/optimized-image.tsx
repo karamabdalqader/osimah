@@ -11,7 +11,7 @@ const IMAGE_META: Record<string, ImageMeta> = {
   "/chairman.png": { slug: "chairman", width: 871, height: 1216, widths: [480, 720, 871] },
   "/chairman.PNG": { slug: "chairman", width: 871, height: 1216, widths: [480, 720, 871] },
   "/CEO 1.png": { slug: "ceo-1", width: 768, height: 1393, widths: [480, 720, 768] },
-  "/logo.PNG": { slug: "logo", width: 1925, height: 817, widths: [160, 240, 320, 480] },
+  "/logo.PNG": { slug: "logo", width: 1218, height: 331, widths: [160, 240, 320, 480] },
   "/o1.PNG": { slug: "o1", width: 1309, height: 847, widths: [480, 720, 960] },
   "/o2.PNG": { slug: "o2", width: 688, height: 556, widths: [480, 688] },
   "/o3.PNG": { slug: "o3", width: 1135, height: 782, widths: [480, 720, 960] },

@@ -52,7 +52,10 @@ writeFileSync(out("favicon.ico"), buildIco([ico16, ico32, ico48]));
 
 const ogMark = await sharp(svg, { density: 512 }).resize(360, 360).toBuffer();
 const wordmark = readFileSync(join(root, "public", "logo.PNG"));
-const ogWordmark = await sharp(wordmark).resize({ width: 520 }).toBuffer();
+const ogWordmark = await sharp(wordmark)
+  .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 }, threshold: 1 })
+  .resize({ width: 520 })
+  .toBuffer();
 
 const ogSvg = Buffer.from(
   `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">

@@ -9,10 +9,10 @@ export function Footer() {
             <OptimizedImage
               src="/logo.PNG"
               alt="Osimah Digital"
-              sizes="96px"
+              sizes="(max-width: 600px) 140px, 156px"
+              className="footer__logo"
               loading="lazy"
               decoding="async"
-              style={{ height: 36, width: "auto", marginBottom: 24 }}
             />
             <h3 className="serif">
               Enabling the <em>Kingdom&rsquo;s</em> digital future.
