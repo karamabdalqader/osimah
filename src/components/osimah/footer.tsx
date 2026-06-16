@@ -47,7 +47,7 @@ export function Footer() {
             <h4>Contact</h4>
             <ul>
               <li><a href="#contact">Start a project</a></li>
-              <li><a href="mailto:hello@osimah.sa">hello@osimah.sa</a></li>
+              <li><a href="mailto:Karam@crafton-me.com">Karam@crafton-me.com</a></li>
               <li><a href="#">LinkedIn</a></li>
             </ul>
           </div>
