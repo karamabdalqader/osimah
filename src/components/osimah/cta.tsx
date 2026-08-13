@@ -9,7 +9,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 
 const FORM_ENDPOINT =
   process.env.NEXT_PUBLIC_FORM_ENDPOINT || "https://formspree.io/f/mzdwbkew";
-const FALLBACK_EMAIL = "Karam@crafton-me.com";
+const FALLBACK_EMAIL = "karam@osimah.sa";
 const FIELD_MESSAGES: Record<FieldKey, string> = {
   name: "Use at least 2 characters.",
   email: "Use a valid work email.",

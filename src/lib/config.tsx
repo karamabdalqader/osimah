@@ -35,7 +35,7 @@ export const siteConfig = {
         "Saudi Technology",
     ],
     links: {
-        email: "Karam@crafton-me.com",
+        email: "karam@osimah.sa",
         twitter: "https://twitter.com/osimahdigital",
         discord: "",
         github: "",
